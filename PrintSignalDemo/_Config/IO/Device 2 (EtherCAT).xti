@@ -15,6 +15,6 @@
 		<Box File="Term 1 (EK1100).xti" Id="1">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT DcSyncMode="3"/>
+		<EtherCAT PromiscuousModeNoCopy="true" DcSyncMode="3"/>
 	</Device>
 </TcSmItem>
