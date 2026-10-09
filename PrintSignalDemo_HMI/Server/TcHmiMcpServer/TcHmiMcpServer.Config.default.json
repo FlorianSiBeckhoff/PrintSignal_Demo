@@ -1,0 +1,11 @@
+{
+    "extensionHostCustomPythonEnvPath": "",
+    "extensionHostDebugPort": 0,
+    "extensionHostFileSystemWatcherInterval": "PT0S",
+    "extensionHostLogLevel": "warning",
+    "extensionHostPythonEnvTimeout": "PT5M",
+    "extensionHostReloadAutomatically": false,
+    "extensionHostStartupArguments": "",
+    "subAgentModel": "",
+    "subagentVisibility": false
+}

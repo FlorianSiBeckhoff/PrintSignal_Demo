@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<BitSize>4</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Box Id="2" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d04" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x08cc3052" RevisionNo="#x00140000" BIC="1P043945SBTN999lvrxb1KEL2252                        Q1    2P472500130020" InfoDataDcTimes="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2252 2Ch. Dig. Output 24V, 0.5A, DC Time Stamp" Desc="EL2252">
+			<SyncMan>8109010000000000030000000000000000008109000c0000</SyncMan>
+			<SyncMan>900908000000000003000000000000000000900900040000</SyncMan>
+			<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
+			<SyncMan>100900000000000004000000000000000000100900040000</SyncMan>
+			<SyncMan>001000000000000004000000000000000000001000040000</SyncMan>
+			<Fmmu>0000000000000000810900020100000001000000060000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000900900020100000001000000060000000100000000000000</Fmmu>
+			<Fmmu>0000000000000000000f00020100000001000000060000000200000000000000</Fmmu>
+			<DcData>0003000000943577000000000000000000000000000000000000000000000000</DcData>
+			<DcMode>446354696d655374616d70000000000044432054696d65205374616d702053657474696e677300000000000000000000009435770000000000000000000000030000000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<Pdo Name="SysTime" Index="#x1a00" Flags="#x0030">
+				<Entry Name="SysTime" Index="#x1d09" Sub="#x10">
+					<Type>ULINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Feedback" Index="#x1a01" Flags="#x0030">
+				<Entry Name="Feedback" Index="#x1d09" Sub="#x11">
+					<Type>USINT</Type>
+					<Comment><![CDATA[Bit 0: Output 1
+Bit 1: Tristate 1
+Bit 2: Output 2
+Bit 3: Tristate 2]]></Comment>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DC Sync Activate" Index="#x1602" InOut="1" Flags="#x0030" SyncMan="0">
+				<Entry Name="Activate" Index="#x1d09" Sub="#x81">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DC Sync Start" Index="#x1603" InOut="1" Flags="#x0030" SyncMan="1">
+				<Entry Name="StartTime" Index="#x1d09" Sub="#x90">
+					<Type>ULINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="2">
+				<Entry Name="Output" Index="#x7000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="TriState" Index="#x7000" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="2">
+				<Entry Name="Output" Index="#x7010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="TriState" Index="#x7010" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Reserved" Index="#x1604" InOut="1" Flags="#x0011" SyncMan="2"/>
+		</EtherCAT>
+	</Box>
+</TcSmItem>
