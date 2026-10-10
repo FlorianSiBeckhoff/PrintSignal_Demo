@@ -1,0 +1,7 @@
+{
+  "tools": [
+    "hmi-main__CreateContentPage",
+    "hmi-main__CreateControls",
+    "hmi-main__GetLoadedHmiInfo"
+  ]
+}

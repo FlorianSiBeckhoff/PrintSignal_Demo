@@ -15,7 +15,7 @@
     "websocketSubscriptionMode": null,
     "disableOptionalSystemSubscriptions": false
   },
-  "activeTheme": "Base",
+  "activeTheme": "Base-Dark",
   "themes": {
     "Base-Dark": {
       "resources": [
@@ -86,8 +86,8 @@
   "disableLoadingOptimization": false,
   "creatorSettings": {
     "viewport": {
-      "defaultWidth": 800,
-      "defaultHeight": 600
+      "defaultWidth": 1920,
+      "defaultHeight": 1080
     }
   },
   "binding": {
