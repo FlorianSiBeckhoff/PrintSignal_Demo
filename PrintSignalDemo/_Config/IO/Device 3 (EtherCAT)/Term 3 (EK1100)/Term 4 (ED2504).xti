@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<BitSize>5</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<BitSize>6</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000009}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..8] OF BIT</Name>
+			<BitSize>9</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>9</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00200000000F}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..14] OF BIT</Name>
+			<BitSize>15</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>15</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ffff00ffff00ffff00ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Box Id="4" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" FoeType="1" VendorId="#x00000002" ProductCode="#x09c81052" RevisionNo="#x00100000" BIC="1P349287SBTN99ak7ptn1KED2504                        Q1    2P272601000016" InfoDataAddr="true" TimeoutMailbox2="2000" DownloadSlotCfg="true" CheckRevisionNoType="3" PortPhys="51" DownloadSlotCfgIP="true" SdoUploadWithMaxLength="true" MaxSlotCount="8" MaxSlotGroupCount="3" SlotPdoIncrement="16" SlotIndexIncrement="16" Type="ED2504 | 4-ch. PWM output, 5...24 V DC, 1.5 A, push-in, with 4 x DI" Desc="ED2504">
+			<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+			<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+			<SyncMan>001122002400010003000000000000002200001124010000</SyncMan>
+			<SyncMan>00120a002000010004000000000000000a00001220010000</SyncMan>
+			<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001200010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>0010f400f410f400</BootStrapData>
+			<MBoxUserCmdData>004003000c0000001100000003000000000000000000000000000000000000002081f0010400000000001000646f776e6c6f6164207265766973696f6e00</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a0000001f000000030010000000000000000000000000000000000020f31005020000000100456e61626c6520446961674d65737361676520617320656d657267656e637900</MBoxUserCmdData>
+			<Pdo Name="PWM Inputs Device" Index="#x1b00" Flags="#x0011" SyncMan="3">
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="PWM Warning" Index="#xf616" Sub="#x06">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="PWM Error" Index="#xf616" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="PWM Diag" Index="#xf616" Sub="#x0d">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="TxPDO State" Index="#xf616" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input Cycle Counter" Index="#xf616" Sub="#x0f">
+					<Type>BIT2</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Outputs Device" Index="#x1700" InOut="1" Flags="#x0011" SyncMan="2">
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
+				</Entry>
+				<Entry Name="PWM Reset" Index="#xf716" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000009}">ARRAY [0..8] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Output Cycle Counter" Index="#x1701" InOut="1" Flags="#x0010">
+				<Entry Name="PWM Output Cycle Counter" Index="#xf716" Sub="#x11">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Outputs" Index="#x1600" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="PWM Duty Cycle" Index="#x7001" Sub="#x12" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="PWM Frequency" Index="#x7001" Sub="#x13" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DI Inputs" Index="#x1a10" Flags="#x0291" SyncMan="3">
+				<Entry Name="Input" Index="#x6010" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Outputs" Index="#x1620" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="PWM Duty Cycle" Index="#x7021" Sub="#x12" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="PWM Frequency" Index="#x7021" Sub="#x13" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DI Inputs" Index="#x1a30" Flags="#x0291" SyncMan="3">
+				<Entry Name="Input" Index="#x6030" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Outputs" Index="#x1640" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="PWM Duty Cycle" Index="#x7041" Sub="#x12" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="PWM Frequency" Index="#x7041" Sub="#x13" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DI Inputs" Index="#x1a50" Flags="#x0291" SyncMan="3">
+				<Entry Name="Input" Index="#x6050" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="PWM Outputs" Index="#x1660" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="PWM Duty Cycle" Index="#x7061" Sub="#x12" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="PWM Frequency" Index="#x7061" Sub="#x13" Flags="#x00001000">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DI Inputs" Index="#x1a70" Flags="#x0291" SyncMan="3">
+				<Entry Name="Input" Index="#x6070" Sub="#x01" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-00200000000F}">ARRAY [0..14] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Slot Name="Slot Group 1 Slot 1">
+				<SlotData>0000010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>526792</ModuleIdent>
+				<ModuleIdent>3672520</ModuleIdent>
+				<ModuleIdent>1051080</ModuleIdent>
+				<Module Id="#x03090009" Type="PWM_R32" Class="">
+					<Name>SlotGroup 1 (Output 1, Input 1) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8091000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5632</PdoIndex>
+					<CoeProfile ProfileNo="#x00fa1389" DisplayName="PWM Output"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 1 Slot 2">
+				<SlotData>0000010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2099656</ModuleIdent>
+				<ModuleIdent>1575368</ModuleIdent>
+				<ModuleIdent>3148232</ModuleIdent>
+				<Module Id="#x0309000a" Type="DI" Class="">
+					<Name>SlotGroup 1 (Output 1, Input 1) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8092000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6672</PdoIndex>
+					<CoeProfile ProfileNo="#x00651389" DisplayName="Digital Input"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 2 Slot 1">
+				<SlotData>0100010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>526792</ModuleIdent>
+				<ModuleIdent>3672520</ModuleIdent>
+				<ModuleIdent>1051080</ModuleIdent>
+				<Module Id="#x0309000b" Type="PWM_R32" Class="">
+					<Name>SlotGroup 2 (Output 2, Input 2) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8091000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5664</PdoIndex>
+					<CoeProfile ProfileNo="#x00fa1389" DisplayName="PWM Output"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 2 Slot 2">
+				<SlotData>0100010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2099656</ModuleIdent>
+				<ModuleIdent>1575368</ModuleIdent>
+				<ModuleIdent>3148232</ModuleIdent>
+				<Module Id="#x0309000c" Type="DI" Class="">
+					<Name>SlotGroup 2 (Output 2, Input 2) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8092000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6704</PdoIndex>
+					<CoeProfile ProfileNo="#x00651389" DisplayName="Digital Input"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 3 Slot 1">
+				<SlotData>0200010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>526792</ModuleIdent>
+				<ModuleIdent>3672520</ModuleIdent>
+				<ModuleIdent>1051080</ModuleIdent>
+				<Module Id="#x0309000d" Type="PWM_R32" Class="">
+					<Name>SlotGroup 3 (Output 3, Input 3) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8091000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5696</PdoIndex>
+					<CoeProfile ProfileNo="#x00fa1389" DisplayName="PWM Output"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 3 Slot 2">
+				<SlotData>0200010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2099656</ModuleIdent>
+				<ModuleIdent>1575368</ModuleIdent>
+				<ModuleIdent>3148232</ModuleIdent>
+				<Module Id="#x0309000e" Type="DI" Class="">
+					<Name>SlotGroup 3 (Output 3, Input 3) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8092000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6736</PdoIndex>
+					<CoeProfile ProfileNo="#x00651389" DisplayName="Digital Input"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 4 Slot 1">
+				<SlotData>0300010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>526792</ModuleIdent>
+				<ModuleIdent>3672520</ModuleIdent>
+				<ModuleIdent>1051080</ModuleIdent>
+				<Module Id="#x0309000f" Type="PWM_R32" Class="">
+					<Name>SlotGroup 4 (Output 4, Input 4) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8091000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5728</PdoIndex>
+					<CoeProfile ProfileNo="#x00fa1389" DisplayName="PWM Output"/>
+				</Module>
+			</Slot>
+			<Slot Name="Slot Group 4 Slot 2">
+				<SlotData>0300010001001600100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>0</ModuleIdent>
+				<ModuleIdent>2099656</ModuleIdent>
+				<ModuleIdent>1575368</ModuleIdent>
+				<ModuleIdent>3148232</ModuleIdent>
+				<Module Id="#x03090010" Type="DI" Class="">
+					<Name>SlotGroup 4 (Output 4, Input 4) (PWM_OUT_REAL32_DI)</Name>
+					<ImageId>548</ImageId>
+					<ModuleData>02000000c8092000000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6768</PdoIndex>
+					<CoeProfile ProfileNo="#x00651389" DisplayName="Digital Input"/>
+				</Module>
+			</Slot>
+			<SlotGroupData Name="SlotGroup 1 (Output 1, Input 1)">
+				<SlotGroup>0</SlotGroup>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Digital Input" Type="PWM_OUT_INT16_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Frequency Input" Type="PWM_OUT_INT16_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Digital Input" Type="PWM_OUT_INT32_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Frequency Input" Type="PWM_OUT_INT32_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8196</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Digital Input" Type="PWM_OUT_REAL32_DI" Class="PWM (Real)" ImageId="1001">
+					<Id>8197</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Frequency Input" Type="PWM_OUT_REAL32_ENC" Class="PWM (Real)" ImageId="1001">
+					<Id>8198</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Hardware Enable" Type="PWM_OUT_REAL32_HWE" Class="PWM (Real)" ImageId="1001">
+					<Id>8199</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>3148232</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+			<SlotGroupData Name="SlotGroup 2 (Output 2, Input 2)">
+				<SlotGroup>1</SlotGroup>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Digital Input" Type="PWM_OUT_INT16_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Frequency Input" Type="PWM_OUT_INT16_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Digital Input" Type="PWM_OUT_INT32_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Frequency Input" Type="PWM_OUT_INT32_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8196</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Digital Input" Type="PWM_OUT_REAL32_DI" Class="PWM (Real)" ImageId="1001">
+					<Id>8197</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Frequency Input" Type="PWM_OUT_REAL32_ENC" Class="PWM (Real)" ImageId="1001">
+					<Id>8198</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Hardware Enable" Type="PWM_OUT_REAL32_HWE" Class="PWM (Real)" ImageId="1001">
+					<Id>8199</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>3148232</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+			<SlotGroupData Name="SlotGroup 3 (Output 3, Input 3)">
+				<SlotGroup>2</SlotGroup>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Digital Input" Type="PWM_OUT_INT16_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Frequency Input" Type="PWM_OUT_INT16_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Digital Input" Type="PWM_OUT_INT32_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Frequency Input" Type="PWM_OUT_INT32_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8196</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Digital Input" Type="PWM_OUT_REAL32_DI" Class="PWM (Real)" ImageId="1001">
+					<Id>8197</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Frequency Input" Type="PWM_OUT_REAL32_ENC" Class="PWM (Real)" ImageId="1001">
+					<Id>8198</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Hardware Enable" Type="PWM_OUT_REAL32_HWE" Class="PWM (Real)" ImageId="1001">
+					<Id>8199</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>3148232</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+			<SlotGroupData Name="SlotGroup 4 (Output 4, Input 4)">
+				<SlotGroup>3</SlotGroup>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Digital Input" Type="PWM_OUT_INT16_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8193</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT16 Legacy), Frequency Input" Type="PWM_OUT_INT16_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8194</Id>
+					<ModuleIdent>526792</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Digital Input" Type="PWM_OUT_INT32_DI" Class="PWM (Integer)" ImageId="1001">
+					<Id>8195</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Pulse Width, Period (INT32 Legacy), Frequency Input" Type="PWM_OUT_INT32_ENC" Class="PWM (Integer)" ImageId="1001">
+					<Id>8196</Id>
+					<ModuleIdent>3672520</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Digital Input" Type="PWM_OUT_REAL32_DI" Class="PWM (Real)" ImageId="1001">
+					<Id>8197</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>2099656</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Frequency Input" Type="PWM_OUT_REAL32_ENC" Class="PWM (Real)" ImageId="1001">
+					<Id>8198</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>1575368</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="PWM, Output Duty Cycle, Frequency (REAL32), Hardware Enable" Type="PWM_OUT_REAL32_HWE" Class="PWM (Real)" ImageId="1001">
+					<Id>8199</Id>
+					<ModuleIdent>1051080</ModuleIdent>
+					<ModuleIdent>3148232</ModuleIdent>
+				</ModuleGroupData>
+				<ModuleGroupData Name="Empty" Type="EMPTY2" Class="Empty" ImageId="1002">
+					<Id>258</Id>
+					<ModuleIdent>0</ModuleIdent>
+					<ModuleIdent>0</ModuleIdent>
+				</ModuleGroupData>
+			</SlotGroupData>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

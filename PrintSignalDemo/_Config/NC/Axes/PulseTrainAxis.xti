@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CNcAxisDef" SubType="5">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CNcAxisDef" SubType="1">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1424,15 +1424,12 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="1" CreateSymbols="true" AxisType="5">
+	<Axis Id="3" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
-		<Encoder Name="Enc" EncType="4">
-			<EncPara MaxCount="#xffffffff">
-				<Inc RefSoftSyncMask="#x0000ffff"/>
-			</EncPara>
+		<Encoder Name="Enc" EncType="1">
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1492,7 +1489,6 @@ External Setpoint Generation:
 		<Drive Name="Drive" DrvType="5">
 			<DrvPara>
 				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
-				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1581,36 +1577,4 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
-	<Mappings>
-		<OwnerA>
-			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 3 (EK1100)^Term 8 (EL5101)">
-				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="ENC Status^Counter value"/>
-				<Link VarA="Enc^Inputs^In^nDataIn2" VarB="ENC Status^Latch value"/>
-				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Counter overflow" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Latch C valid" Size="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Latch extern valid" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Open circuit" Size="1" OffsA="6"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Status of input status" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of extern latch" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input A" Size="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input C" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input gate" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^TxPDO State" Size="1" OffsA="6"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch C" Size="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="ENC Control^Set counter value"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>

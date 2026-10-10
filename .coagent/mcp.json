@@ -2,7 +2,7 @@
   "mcpServers": {
     "hmi-pythonextension": {
       "type": "websocket",
-      "url": "ws://127.0.0.1:64105",
+      "url": "ws://127.0.0.1:49903",
       "initial_message": "",
       "timeout_in_seconds": 120,
       "mcp_config": {
@@ -16,7 +16,7 @@
     },
     "hmi-main": {
       "type": "websocket",
-      "url": "ws://127.0.0.1:64106",
+      "url": "ws://127.0.0.1:49904",
       "initial_message": "",
       "timeout_in_seconds": 120,
       "mcp_config": {
@@ -30,7 +30,7 @@
     },
     "hmi-serveragent": {
       "type": "websocket",
-      "url": "ws://127.0.0.1:64107",
+      "url": "ws://127.0.0.1:49905",
       "initial_message": "",
       "timeout_in_seconds": 120,
       "mcp_config": {

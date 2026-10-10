@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CDevEtherCATDef" SubType="111">
-	<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="192.168.0.61.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="6">
+	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="192.168.0.61.2.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="7">
 		<Name>__FILENAME__</Name>
 		<AddressInfo>
 			<Pnp>
-				<DeviceDesc>EtherCAT2 (TwinCAT-Intel PCI Ethernet Adapter (Giga</DeviceDesc>
-				<DeviceName>\DEVICE\{380CBCA9-A056-4C0C-9B94-A900DA7C7428}</DeviceName>
-				<DeviceData>0001058ed18d</DeviceData>
+				<DeviceDesc>EtherCAT3 (TwinCAT-Intel PCI Ethernet Adapter (Giga</DeviceDesc>
+				<DeviceName>\DEVICE\{4B459971-BB11-496E-B483-87BD6744D42A}</DeviceName>
+				<DeviceData>0001058b8f14</DeviceData>
 			</Pnp>
 		</AddressInfo>
-		<Image Id="5" AddrType="9" ImageType="3">
+		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Box File="Term 6 (EK1100).xti" Id="6">
+		<Box File="Term 6 (EK1818).xti" Id="6">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT/>
+		<EtherCAT PromiscuousModeNoCopy="true" DcSyncMode="2"/>
 	</Device>
 </TcSmItem>

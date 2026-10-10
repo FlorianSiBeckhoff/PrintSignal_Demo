@@ -17,5 +17,7 @@
 			<Name>NC-Task 1 SVB</Name>
 		</SvbTask>
 		<Axis File="Encoder.xti" Id="1"/>
+		<Axis File="ConfirmationAxis.xti" Id="2"/>
+		<Axis File="PulseTrainAxis.xti" Id="3"/>
 	</NC>
 </TcSmItem>

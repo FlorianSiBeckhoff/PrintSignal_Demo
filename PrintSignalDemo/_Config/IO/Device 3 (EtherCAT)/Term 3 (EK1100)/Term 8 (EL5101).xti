@@ -29,7 +29,7 @@
 		<EtherCAT SlaveType="2" PdiType="#x0c05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="7" FoeType="1" VendorId="#x00000002" ProductCode="#x13ed3052" RevisionNo="#x04000000" InfoDataAddr="true" InfoDataDcTimes="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL5101 1Ch. Inc. Encoder 5V" Desc="EL5101">
 			<SyncMan>001830002600010001000000300030003000001826010000</SyncMan>
 			<SyncMan>801830002200010002000000300030003000801822010000</SyncMan>
-			<SyncMan>001004002400010003000000000000000300001024010000</SyncMan>
+			<SyncMan>001006002400010003000000000000000300001024010000</SyncMan>
 			<SyncMan>00110a002000010004000000000000000500001120010000</SyncMan>
 			<Fmmu>0000000000000000001000020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001100010100000002000000000000000000000000000000</Fmmu>
@@ -95,7 +95,7 @@
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="ENC Status compact" Index="#x1a03" Flags="#x0010" SyncMan="3">
+			<Pdo Name="ENC Status compact" Index="#x1a03" Flags="#x0010">
 				<ExcludePdo>#x1a04</ExcludePdo>
 				<ExcludePdo>#x1a00</ExcludePdo>
 				<ExcludePdo>#x1a01</ExcludePdo>
@@ -155,7 +155,7 @@
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="ENC Status" Index="#x1a04" Flags="#x0010">
+			<Pdo Name="ENC Status" Index="#x1a04" Flags="#x0010" SyncMan="3">
 				<ExcludePdo>#x1a03</ExcludePdo>
 				<ExcludePdo>#x1a00</ExcludePdo>
 				<ExcludePdo>#x1a01</ExcludePdo>
@@ -242,7 +242,7 @@
 					<Type>ULINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="ENC Timest. compact" Index="#x1a08" Flags="#x0010" SyncMan="3">
+			<Pdo Name="ENC Timest. compact" Index="#x1a08" Flags="#x0010">
 				<ExcludePdo>#x1a07</ExcludePdo>
 				<ExcludePdo>#x1a00</ExcludePdo>
 				<ExcludePdo>#x1a01</ExcludePdo>
@@ -276,7 +276,7 @@
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="ENC Control compact" Index="#x1602" InOut="1" Flags="#x0010" SyncMan="2">
+			<Pdo Name="ENC Control compact" Index="#x1602" InOut="1" Flags="#x0010">
 				<ExcludePdo>#x1603</ExcludePdo>
 				<ExcludePdo>#x1600</ExcludePdo>
 				<ExcludePdo>#x1601</ExcludePdo>
@@ -302,7 +302,7 @@
 					<Type>UINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="ENC Control" Index="#x1603" InOut="1" Flags="#x0010">
+			<Pdo Name="ENC Control" Index="#x1603" InOut="1" Flags="#x0010" SyncMan="2">
 				<ExcludePdo>#x1602</ExcludePdo>
 				<ExcludePdo>#x1600</ExcludePdo>
 				<ExcludePdo>#x1601</ExcludePdo>

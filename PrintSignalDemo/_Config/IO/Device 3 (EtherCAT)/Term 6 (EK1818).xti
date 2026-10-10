@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fff</ImageData>
+	</ImageDatas>
+	<Box Id="6" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d04" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x071a2c52" RevisionNo="#x00120000" RepeatSupport="true" CheckRevisionNoType="3" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1818 EtherCAT IO-Coupler  (1A E-Bus, 8 Ch. Dig. In, 3ms, 4 Ch. Dig. Out 24V, 0,5A)" Desc="EK1818">
+			<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
+			<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+			<Fmmu>0000000000000000010f00020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+			<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6020" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6030" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6040" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6050" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6060" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6070" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 9" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 10" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 11" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7020" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 12" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7030" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+		</EtherCAT>
+		<Box File="Term 9 (EL7041).xti" Id="9">
+			<EtherCAT PortABoxInfo="#x01000006"/>
+		</Box>
+		<Box File="Term 11 (EL1252).xti" Id="11">
+			<EtherCAT PortABoxInfo="#x01000009"/>
+		</Box>
+		<Box File="Term 5 (EL9011).xti" Id="12">
+			<EtherCAT PortABoxInfo="#x0100000b"/>
+		</Box>
+	</Box>
+</TcSmItem>
