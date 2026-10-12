@@ -3,11 +3,352 @@
   data-tchmi-type="TcHmi.Controls.System.TcHmiView"
   data-tchmi-top="0"
   data-tchmi-left="0"
-  data-tchmi-width-mode="Parent"
-  data-tchmi-min-width="100"
-  data-tchmi-min-width-unit="%"
-  data-tchmi-height-mode="Parent"
-  data-tchmi-min-height="100"
-  data-tchmi-min-height-unit="%"
- data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+  data-tchmi-width="1920"
+  data-tchmi-width-unit="px"
+  data-tchmi-height="1080"
+  data-tchmi-height-unit="px">
+  <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#16181b"
+}
+  </script>
+
+  <!-- Region 1: header bar (logo, title, TwinCAT EventLogger line) -->
+  <div
+    id="HeaderBar"
+    data-tchmi-type="TcHmi.Controls.System.TcHmiContainer"
+    data-tchmi-left="0"
+    data-tchmi-left-unit="px"
+    data-tchmi-top="0"
+    data-tchmi-top-unit="px"
+    data-tchmi-width="1920"
+    data-tchmi-width-unit="px"
+    data-tchmi-height="80"
+    data-tchmi-height-unit="px"
+    data-tchmi-zindex="2">
+    <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#202328"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "#ed1c24"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "leftUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "right": 0,
+  "rightUnit": "px",
+  "bottom": 3,
+  "bottomUnit": "px"
+}
+    </script>
+
+    <div
+      id="MenuToggleButton"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton"
+      data-tchmi-left="16"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="16"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="48"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="48"
+      data-tchmi-height-unit="px"
+      data-tchmi-text="&#9776;"
+      data-tchmi-text-font-size="24"
+      data-tchmi-text-horizontal-alignment="Center"
+      data-tchmi-text-vertical-alignment="Center"
+      data-tchmi-tooltip="Show / hide menu">
+      <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "MenuToggleButton.onPressed",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "var nav = TcHmi.Controls.get('NavigationMenu');",
+          "var region = TcHmi.Controls.get('ContentRegion');",
+          "if (nav && region) {",
+          "    var collapse = nav.getVisibility() === 'Visible';",
+          "    nav.setVisibility(collapse ? 'Collapsed' : 'Visible');",
+          "    region.setLeft(collapse ? 16 : 296);",
+          "    region.setWidth(collapse ? 1888 : 1608);",
+          "}"
+        ],
+        "injectContextObject": false,
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+      </script>
+    </div>
+
+    <div
+      id="BeckhoffLogo"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage"
+      data-tchmi-left="88"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="16"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="158"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="48"
+      data-tchmi-height-unit="px"
+      data-tchmi-src="Images/Beckhoff_Logo.svg"
+      data-tchmi-alt="Beckhoff">
+    </div>
+
+    <div
+      id="HeaderDivider"
+      data-tchmi-type="TcHmi.Controls.System.TcHmiContainer"
+      data-tchmi-left="266"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="20"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="1"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="40"
+      data-tchmi-height-unit="px">
+      <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#3a3e45"
+}
+      </script>
+    </div>
+
+    <div
+      id="AppTitle"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock"
+      data-tchmi-left="287"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="20"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="250"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="40"
+      data-tchmi-height-unit="px"
+      data-tchmi-text="Print Signal Demo"
+      data-tchmi-text-font-size="22"
+      data-tchmi-text-font-weight="Bold"
+      data-tchmi-text-vertical-alignment="Center">
+    </div>
+
+    <div
+      id="HeaderEventLine"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEventLine"
+      data-tchmi-left="560"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="18"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="1336"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="44"
+      data-tchmi-height-unit="px"
+      data-tchmi-text-font-size="16"
+      data-tchmi-text-overflow="Ellipsis"
+      data-tchmi-show-message-if-empty="true">
+      <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#16181b"
+}
+      </script>
+      <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "#3a3e45"
+}
+      </script>
+      <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "leftUnit": "px",
+  "top": 1,
+  "topUnit": "px",
+  "right": 1,
+  "rightUnit": "px",
+  "bottom": 1,
+  "bottomUnit": "px"
+}
+      </script>
+      <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 6,
+  "topLeftUnit": "px",
+  "topRight": 6,
+  "topRightUnit": "px",
+  "bottomRight": 6,
+  "bottomRightUnit": "px",
+  "bottomLeft": 6,
+  "bottomLeftUnit": "px"
+}
+      </script>
+    </div>
   </div>
+
+  <!-- Region 2: collapsible navigation menu (toggled by MenuToggleButton).
+       To add a menu entry, copy a button and increase top by 56 px. -->
+  <div
+    id="NavigationMenu"
+    data-tchmi-type="TcHmi.Controls.System.TcHmiContainer"
+    data-tchmi-left="0"
+    data-tchmi-left-unit="px"
+    data-tchmi-top="80"
+    data-tchmi-top-unit="px"
+    data-tchmi-width="280"
+    data-tchmi-width-unit="px"
+    data-tchmi-height="1000"
+    data-tchmi-height-unit="px"
+    data-tchmi-zindex="1">
+    <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#1d2024"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "#2e3238"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 0,
+  "leftUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "right": 1,
+  "rightUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+    </script>
+
+    <div
+      id="NavMenuTitle"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock"
+      data-tchmi-left="24"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="20"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="232"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="24"
+      data-tchmi-height-unit="px"
+      data-tchmi-text="NAVIGATION"
+      data-tchmi-text-font-size="13"
+      data-tchmi-text-font-weight="Bold">
+      <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "#8a9099"
+}
+      </script>
+    </div>
+
+    <div
+      id="NavHomeButton"
+      data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton"
+      data-tchmi-left="16"
+      data-tchmi-left-unit="px"
+      data-tchmi-top="56"
+      data-tchmi-top-unit="px"
+      data-tchmi-width="248"
+      data-tchmi-width-unit="px"
+      data-tchmi-height="48"
+      data-tchmi-height-unit="px"
+      data-tchmi-text="Home"
+      data-tchmi-text-font-size="16"
+      data-tchmi-text-horizontal-alignment="Left"
+      data-tchmi-text-vertical-alignment="Center">
+      <script data-tchmi-target-attribute="data-tchmi-text-padding" type="application/json">
+{
+  "left": 20,
+  "leftUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "right": 0,
+  "rightUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+      </script>
+      <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "NavHomeButton.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%ContentRegion::TargetContent%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Home.content"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+      </script>
+    </div>
+  </div>
+
+  <!-- Region 3: main content -->
+  <div
+    id="ContentRegion"
+    data-tchmi-type="TcHmi.Controls.System.TcHmiRegion"
+    data-tchmi-left="296"
+    data-tchmi-left-unit="px"
+    data-tchmi-top="96"
+    data-tchmi-top-unit="px"
+    data-tchmi-width="1608"
+    data-tchmi-width-unit="px"
+    data-tchmi-height="968"
+    data-tchmi-height-unit="px"
+    data-tchmi-target-content="Home.content"
+    data-tchmi-scale-mode="None">
+    <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#202328"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "#2e3238"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "leftUnit": "px",
+  "top": 1,
+  "topUnit": "px",
+  "right": 1,
+  "rightUnit": "px",
+  "bottom": 1,
+  "bottomUnit": "px"
+}
+    </script>
+    <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 8,
+  "topLeftUnit": "px",
+  "topRight": 8,
+  "topRightUnit": "px",
+  "bottomRight": 8,
+  "bottomRightUnit": "px",
+  "bottomLeft": 8,
+  "bottomLeftUnit": "px"
+}
+    </script>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_IO" Id="{c2b683a3-f267-45bc-ab19-250706f5301e}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// ED2504 (Term 4 under EK1100 Term 3) - PWM channel 1
+	ED2504_Ch1_DutyCycle AT %Q* : REAL; // PWM Outputs (0x1600) / PWM Duty Cycle [%]
+	ED2504_Ch1_Frequency AT %Q* : REAL; // PWM Outputs (0x1600) / PWM Frequency [Hz]
+	// ED2504 device level PWM status / control
+	ED2504_PwmWarning	 AT %I* : BOOL; // PWM Inputs Device (0x1B00) / PWM Warning
+	ED2504_PwmError		 AT %I* : BOOL; // PWM Inputs Device (0x1B00) / PWM Error
+	ED2504_PwmReset		 AT %Q* : BOOL; // PWM Outputs Device (0x1700) / PWM Reset
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

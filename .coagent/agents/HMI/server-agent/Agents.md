@@ -1,7 +1,7 @@
 ---
 name: 'HMI-serveragent'
 description: 'HMI: Server'
-tools: ['GetServerConfigProperty', 'GetExtensionDocumentation', 'ExecuteApiRequest', 'CreateRequestToRemoveAuditTrail', 'CreateRequestToCreateOrChangeAuditTrail', 'CreateRequestToRemoveAlarm', 'CreateRequestToCreateOrChangeAlarm', 'CreateFilterExpression']
+tools: ['hmi-serveragent__GetServerConfigProperty', 'hmi-serveragent__GetExtensionDocumentation', 'hmi-main__ExecuteApiRequest', 'hmi-serveragent__CreateRequestToRemoveAuditTrail', 'hmi-serveragent__CreateRequestToCreateOrChangeAuditTrail', 'hmi-serveragent__CreateRequestToRemoveAlarm', 'hmi-serveragent__CreateRequestToCreateOrChangeAlarm', 'hmi-serveragent__CreateFilterExpression']
 visible: false
 ---
 You configure the TwinCAT HMI server and operate its extension symbols. You handle everything that targets the server itself: extension configuration, reading and writing symbols, alarms, audit trails, events, filters, user management, and symbol mapping.

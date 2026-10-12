@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="RpmToDutyCycle" Id="{6df2fede-0591-457a-93f9-83fe478b07b8}" SpecialFunc="None">
+    <Declaration><![CDATA[// Transfer function RPM <-> PWM duty cycle.
+// RpmLow corresponds to 0 %, RpmHigh to 100 %. The result is limited to 0..100 %.
+// RpmHigh < RpmLow is allowed and inverts the characteristic.
+FUNCTION_BLOCK RpmToDutyCycle IMPLEMENTS I_TransformLRealValue
+VAR
+	_RpmLow	 : LREAL := 0.0;
+	_RpmHigh : LREAL := 1000.0;
+END_VAR
+VAR CONSTANT
+	DUTY_CYCLE_MIN : LREAL := 0.0;
+	DUTY_CYCLE_MAX : LREAL := 100.0;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="RpmHigh" Id="{69f01143-a1a9-4f8b-a21f-4d8ab8421ef9}">
+      <Declaration><![CDATA[PROPERTY RpmHigh : LREAL // RPM at 100 % duty cycle]]></Declaration>
+      <Get Name="Get" Id="{a8ee8911-02fb-40bd-920d-a61a073baa17}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[RpmHigh := _RpmHigh;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{a2950738-a557-46f8-b8bb-842ea46192f1}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_RpmHigh := RpmHigh;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="RpmLow" Id="{213e2254-3340-4321-a14c-3f0458586ff5}">
+      <Declaration><![CDATA[PROPERTY RpmLow : LREAL // RPM at 0 % duty cycle]]></Declaration>
+      <Get Name="Get" Id="{f28aad5b-6f30-4dd9-b706-99a3d46e938e}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[RpmLow := _RpmLow;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{34b2de77-0ebe-46d5-a933-f3059496660a}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_RpmLow := RpmLow;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Transform" Id="{007c82bf-5092-4835-93c6-a62f349e2dfc}">
+      <Declaration><![CDATA[// Reverse = FALSE: RPM -> duty cycle [%]
+// Reverse = TRUE : duty cycle [%] -> RPM
+// Returns 0 if RpmLow = RpmHigh (invalid range).
+METHOD Transform : LREAL
+VAR_INPUT
+	Value	: LREAL;
+	Reverse : BOOL := FALSE;
+END_VAR
+VAR
+	Span : LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Span := _RpmHigh - _RpmLow;
+IF Span = 0.0 THEN
+	Transform := 0.0;
+	RETURN;
+END_IF
+
+IF NOT Reverse THEN
+	Transform := LIMIT(DUTY_CYCLE_MIN, (Value - _RpmLow) / Span * DUTY_CYCLE_MAX, DUTY_CYCLE_MAX);
+ELSE
+	Transform := _RpmLow + LIMIT(DUTY_CYCLE_MIN, Value, DUTY_CYCLE_MAX) / DUTY_CYCLE_MAX * Span;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

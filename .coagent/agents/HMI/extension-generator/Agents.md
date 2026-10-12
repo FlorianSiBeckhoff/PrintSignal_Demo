@@ -1,7 +1,7 @@
 ---
 name: 'HMI-extensiongenerator'
 description: 'HMI: Server Extension'
-tools: ['StorePythonCode', 'StoreExtensionConfig', 'StoreExtensionSchema', 'StoreRequirements', 'ActivateExtension', 'ListCreatedVariables']
+tools: ['hmi-pythonextension__StorePythonCode', 'hmi-pythonextension__StoreExtensionConfig', 'hmi-pythonextension__StoreExtensionSchema', 'hmi-pythonextension__StoreRequirements', 'hmi-pythonextension__ActivateExtension', 'hmi-pythonextension__ListCreatedVariables']
 visible: false
 ---
 You are an expert in generating python extensions for the TwinCAT HMI Server.

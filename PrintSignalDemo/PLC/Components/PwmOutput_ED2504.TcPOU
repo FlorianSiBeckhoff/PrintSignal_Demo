@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PwmOutput_ED2504" Id="{8efb7e60-7834-474e-b8f0-fe34067b39d2}" SpecialFunc="None">
+    <Declaration><![CDATA[// PWM output component for one channel of an ED2504 terminal (PDO PWM_OUT_REAL32).
+// Command with SetDutyCycle (0..100 %) and SetFrequency (Hz); the setpoints are written
+// to the process image in CyclicLogic.
+FUNCTION_BLOCK PwmOutput_ED2504 EXTENDS CyclicComponent IMPLEMENTS I_Resettable
+VAR
+	DutyCycleOutput : REFERENCE TO REAL; // PWM Outputs / PWM Duty Cycle [%]
+	FrequencyOutput : REFERENCE TO REAL; // PWM Outputs / PWM Frequency [Hz]
+	PwmErrorInput	: REFERENCE TO BOOL; // PWM Inputs Device / PWM Error
+	PwmWarningInput : REFERENCE TO BOOL; // PWM Inputs Device / PWM Warning
+	PwmResetOutput	: REFERENCE TO BOOL; // PWM Outputs Device / PWM Reset
+	_DutyCycle		: LREAL;
+	_Frequency		: LREAL;
+	_ResetRequest	: BOOL;
+	ResetPulse		: TP;
+END_VAR
+VAR CONSTANT
+	DUTY_CYCLE_MIN	 : LREAL := 0.0;
+	DUTY_CYCLE_MAX	 : LREAL := 100.0;
+	RESET_PULSE_TIME : TIME	 := T#100MS;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CyclicLogic" Id="{23e55638-78c6-4218-99ac-ed4a05a12d79}">
+      <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF __ISVALIDREF(DutyCycleOutput) THEN
+	DutyCycleOutput := LREAL_TO_REAL(_DutyCycle);
+END_IF
+IF __ISVALIDREF(FrequencyOutput) THEN
+	FrequencyOutput := LREAL_TO_REAL(_Frequency);
+END_IF
+
+// PWM Reset is held for RESET_PULSE_TIME so the terminal reliably sees it
+ResetPulse(IN := _ResetRequest, PT := RESET_PULSE_TIME);
+_ResetRequest := FALSE;
+IF __ISVALIDREF(PwmResetOutput) THEN
+	PwmResetOutput := ResetPulse.Q;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="DutyCycle" Id="{1d7b3808-cbff-48d4-afe4-83999dd7db99}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY DutyCycle : LREAL // [%]]]></Declaration>
+      <Get Name="Get" Id="{65e58dc5-7489-41fd-bdb6-4da06544028a}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[DutyCycle := _DutyCycle;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="Error" Id="{dcafbd93-a743-4c72-b1d7-b726201fae82}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Error : BOOL // PWM Error reported by the terminal]]></Declaration>
+      <Get Name="Get" Id="{b5edd00b-8210-4dfd-922e-430f5688bd2e}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF __ISVALIDREF(PwmErrorInput) THEN
+	Error := PwmErrorInput;
+END_IF]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="FB_Init" Id="{4b852663-4772-4108-83b9-5ac09791e5e3}">
+      <Declaration><![CDATA[//FB_Init is always available implicitly and it is used primarily for initialization.
+//The return value is not evaluated. For a specific influence, you can also declare the
+//methods explicitly and provide additional code there with the standard initialization
+//code. You can evaluate the return value.
+METHOD FB_Init : BOOL
+VAR_INPUT
+	bInitRetains	: BOOL; // TRUE: the retain variables are initialized (reset warm / reset cold)
+	bInCopyCode		: BOOL; // TRUE: the instance will be copied to the copy code afterward (online change)
+	Name			: T_MaxString;
+	DutyCycleOutput : REFERENCE TO REAL;
+	FrequencyOutput : REFERENCE TO REAL;
+	PwmErrorInput	: REFERENCE TO BOOL;
+	PwmWarningInput : REFERENCE TO BOOL;
+	PwmResetOutput	: REFERENCE TO BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.DutyCycleOutput REF= DutyCycleOutput;
+THIS^.FrequencyOutput REF= FrequencyOutput;
+THIS^.PwmErrorInput	  REF= PwmErrorInput;
+THIS^.PwmWarningInput REF= PwmWarningInput;
+THIS^.PwmResetOutput  REF= PwmResetOutput;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Frequency" Id="{4c538ce3-d76c-4878-9358-b43db84f0938}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Frequency : LREAL // [Hz]]]></Declaration>
+      <Get Name="Get" Id="{289740c1-8749-4b76-82f4-83015d131acb}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Frequency := _Frequency;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Reset" Id="{3d2d3672-e848-49a2-8988-1e96155e73fd}">
+      <Declaration><![CDATA[// Acknowledges a PWM error on the terminal (PWM Reset pulse). Note: PWM Reset acts on the whole ED2504.
+METHOD Reset]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_ResetRequest := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetDutyCycle" Id="{b7ba8174-2756-4c5e-ab97-65b8127a087d}">
+      <Declaration><![CDATA[// Sets the PWM duty cycle in percent. Returns FALSE and keeps the previous value if DutyCycle is outside 0..100 %.
+METHOD SetDutyCycle : BOOL
+VAR_INPUT
+	DutyCycle : LREAL; // [%]
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF DutyCycle >= DUTY_CYCLE_MIN AND DutyCycle <= DUTY_CYCLE_MAX THEN
+	_DutyCycle := DutyCycle;
+	SetDutyCycle := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetFrequency" Id="{896a4930-e967-4fa2-93d9-b5e0767dd888}">
+      <Declaration><![CDATA[// Sets the PWM frequency in Hz. Returns FALSE and keeps the previous value if Frequency is negative.
+METHOD SetFrequency : BOOL
+VAR_INPUT
+	Frequency : LREAL; // [Hz]
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF Frequency >= 0.0 THEN
+	_Frequency := Frequency;
+	SetFrequency := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Warning" Id="{8769fa9c-deb6-4d16-afb1-2fa0dc7552a6}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Warning : BOOL // PWM Warning reported by the terminal]]></Declaration>
+      <Get Name="Get" Id="{781049a9-3f20-4e4f-ace2-2e71bbd1e6f2}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF __ISVALIDREF(PwmWarningInput) THEN
+	Warning := PwmWarningInput;
+END_IF]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

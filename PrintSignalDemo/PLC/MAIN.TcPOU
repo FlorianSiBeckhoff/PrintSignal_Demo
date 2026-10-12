@@ -3,10 +3,28 @@
   <POU Name="MAIN" Id="{b79e520a-676f-4165-bc70-76a19f5b49cd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-END_VAR
-]]></Declaration>
+	PwmOutput : PwmOutput_ED2504(Name			 := 'Motor RPM Target',
+								 DutyCycleOutput := GVL_IO.ED2504_Ch1_DutyCycle,
+								 FrequencyOutput := GVL_IO.ED2504_Ch1_Frequency,
+								 PwmErrorInput	 := GVL_IO.ED2504_PwmError,
+								 PwmWarningInput := GVL_IO.ED2504_PwmWarning,
+								 PwmResetOutput	 := GVL_IO.ED2504_PwmReset);
+	RpmScale  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 3000.0);
+
+	TargetRpm : LREAL := 0.0;	 // [rpm]
+	Frequency : LREAL := 100.0; // [Hz]
+	ResetPwm  : BOOL;
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[PwmOutput.SetFrequency(Frequency);
+PwmOutput.SetDutyCycle(RpmScale.Transform(TargetRpm));
+
+IF ResetPwm THEN
+	ResetPwm := FALSE;
+	PwmOutput.Reset();
+END_IF
+
+PwmOutput.CyclicLogic();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
