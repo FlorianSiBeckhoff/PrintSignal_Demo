@@ -11,20 +11,29 @@ VAR
 								 PwmWarningInput := GVL_IO.ED2504_PwmWarning,
 								 PwmResetOutput	 := GVL_IO.ED2504_PwmReset);
 	RpmScale  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 10000.0);
+	PwmHmi	  : PwmOutput_HMI(Name := 'Motor RPM Target', PwmOutput := PwmOutput, RpmScale := RpmScale);
 
 	TargetRpm : LREAL := 0.0;	 // [rpm]
 	Frequency : LREAL := 100.0; // [Hz]
 	ResetPwm  : BOOL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PwmOutput.SetFrequency(Frequency);
-PwmOutput.SetDutyCycle(RpmScale.Transform(TargetRpm));
+      <ST><![CDATA[// Manual: RPM and frequency come from the HMI (PwmHmi). Auto: from the program.
+IF OperationMode = E_OpMode.auto THEN
+	PwmHmi.Disable();
+	PwmOutput.SetFrequency(Frequency);
+	PwmOutput.SetDutyCycle(RpmScale.Transform(TargetRpm));
+ELSE
+	PwmHmi.Enable();
+END_IF
 
 IF ResetPwm THEN
 	ResetPwm := FALSE;
 	PwmOutput.Reset();
 END_IF
 
+GVL_IO.EL2008_DriveEnable := NOT GVL_IO.ED2504_PwmReset AND PwmOutput.DutyCycle > 10.0;
+PwmHmi.CyclicLogic();
 PwmOutput.CyclicLogic();]]></ST>
     </Implementation>
   </POU>

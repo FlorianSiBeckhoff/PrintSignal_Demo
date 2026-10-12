@@ -73,12 +73,24 @@ IF Span = 0.0 THEN
 	RETURN;
 END_IF
 
-IF Value <= _RpmLow THEN
-	Transform := 10.0;
-ELSIF Value >= _RpmHigh THEN
-	Transform := 90.0;
+IF NOT Reverse THEN
+	// RPM -> duty cycle [%]: RpmLow..RpmHigh maps to DUTY_CYCLE_MIN..DUTY_CYCLE_MAX
+	IF Value <= _RpmLow THEN
+		Transform := DUTY_CYCLE_MIN;
+	ELSIF Value >= _RpmHigh THEN
+		Transform := DUTY_CYCLE_MAX;
+	ELSE
+		Transform := DUTY_CYCLE_MIN + (Value - _RpmLow) / Span * (DUTY_CYCLE_MAX - DUTY_CYCLE_MIN);
+	END_IF
 ELSE
-	Transform := 10.0 + (Value - _RpmLow) / (_RpmHigh - _RpmLow) * 80.0;
+	// Duty cycle [%] -> RPM: DUTY_CYCLE_MIN..DUTY_CYCLE_MAX maps to RpmLow..RpmHigh
+	IF Value <= DUTY_CYCLE_MIN THEN
+		Transform := _RpmLow;
+	ELSIF Value >= DUTY_CYCLE_MAX THEN
+		Transform := _RpmHigh;
+	ELSE
+		Transform := _RpmLow + (Value - DUTY_CYCLE_MIN) / (DUTY_CYCLE_MAX - DUTY_CYCLE_MIN) * Span;
+	END_IF
 END_IF]]></ST>
       </Implementation>
     </Method>

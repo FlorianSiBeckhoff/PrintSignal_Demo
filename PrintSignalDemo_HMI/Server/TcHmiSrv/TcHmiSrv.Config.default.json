@@ -29,14 +29,200 @@
     "DEFAULTLOCALE": "client",
     "DEFAULTTIMEFORMATLOCALE": "client",
     "DEFAULTTIMEZONE": "client",
-    "DEFINITIONS": {},
+    "DEFINITIONS": {
+        "ADS": {
+            "ADS-PLC1.ApplicationBase.ST_HmiFunction": {
+                "additionalProperties": false,
+                "properties": {
+                    "HmiEnabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Name",
+                    "HmiEnabled"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.E_OpMode": {
+                "attributes": {
+                    "generate_implicit_init_function": "",
+                    "qualified_only": "",
+                    "strict": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1
+                ],
+                "options": [
+                    {
+                        "label": "manual",
+                        "value": 0
+                    },
+                    {
+                        "label": "auto",
+                        "value": 1
+                    }
+                ],
+                "type": "integer"
+            },
+            "ADS-PLC1.ST_PwmOutput_HMI": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.ST_HmiFunction"
+                    ],
+                    "TcExtends": "ApplicationBase.ST_HmiFunction"
+                },
+                "properties": {
+                    "DutyCycle": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "[%]",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "Error": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "Frequency": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "[Hz]",
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "FrequencySetpoint": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "[Hz]",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "HmiEnabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "Reset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Acknowledge PWM error, cleared by the PLC",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "Rpm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "[rpm] actual, calculated back from the duty cycle",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "RpmSetpoint": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "[rpm]",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "Warning": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 10
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Name",
+                    "HmiEnabled",
+                    "RpmSetpoint",
+                    "FrequencySetpoint",
+                    "Reset",
+                    "Rpm",
+                    "DutyCycle",
+                    "Frequency",
+                    "Error",
+                    "Warning"
+                ],
+                "type": "object"
+            }
+        }
+    },
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DIAGNOSTICS_DOMAINS": [],
     "DISABLED_CONFIGURATION_HINTS": [],
     "DISCOVERY": 1,
     "ENDPOINTS": [
         "http://127.0.0.1:13000",
-        "http://127.0.0.1:3001"
+        "http://127.0.0.1:3002"
     ],
     "ETAGENABLED": true,
     "EXTENSIONS": {
@@ -804,6 +990,29 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.MAIN.PwmHmi.PwmOutput_HMI": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::MAIN::PwmHmi::PwmOutput_HMI",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_PwmOutput_HMI"
+                    },
+                    {
+                        "addSymbol": true,
+                        "propertyOrder": 6,
+                        "userGroups": [
+                            "Admin",
+                            "__SystemAdministrators"
+                        ]
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -2797,12 +3006,25 @@
             },
             "USEMAPPING": true
         },
+        "OperationMode": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::OperationMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC1.E_OpMode"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.OperationMode": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "MAPPING": "PLC1::MAIN::OperationMode",
-            "SCHEMA": {}
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC1.E_OpMode"
+            },
+            "USEMAPPING": true
         },
         "RefreshDefinitions": {
             "ACCESS": 3,
@@ -3909,7 +4131,9 @@
             "FILEACCESS": 3,
             "FILES": {},
             "SYMBOLACCESS": 3,
-            "SYMBOLS": {}
+            "SYMBOLS": {
+                "ADS.PLC1.MAIN.PwmHmi.PwmOutput_HMI": 3
+            }
         },
         "__SystemGuests": {
             "ENABLED": true,

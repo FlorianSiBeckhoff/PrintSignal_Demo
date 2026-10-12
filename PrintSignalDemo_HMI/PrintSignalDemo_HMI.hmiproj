@@ -12,7 +12,7 @@
     <HmiTitle>PrintSignalDemo_HMI</HmiTitle>
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
-    <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
+    <HmiCommunicationServerPort>3002</HmiCommunicationServerPort>
     <HmiLogTcHmiServerMessages>false</HmiLogTcHmiServerMessages>
     <HmiLogDesignerModeComMessages>false</HmiLogDesignerModeComMessages>
     <HmiDefaultLanguage>client</HmiDefaultLanguage>
@@ -130,6 +130,7 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
+    <Folder Include="UserControls" />
     <Folder Include="Images\Manifest" />
     <Folder Include="Imports" />
     <Folder Include="Imports\Images" />
@@ -148,9 +149,17 @@
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
+    <Content Include="UserControls\PwmOutput_HMI.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\PwmOutput_HMI.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\PwmOutput_HMI.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Home.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json" />
     <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
       <SubType>Content</SubType>
     </Content>

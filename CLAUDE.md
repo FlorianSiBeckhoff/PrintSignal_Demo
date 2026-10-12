@@ -21,7 +21,7 @@ There is no command-line build, lint, or test setup. You build, activate, and ru
 
 - `.TcPOU`, `.TcTTO`, `.plcproj`, `.tsproj`, `.xti`, and `.tmc` files are XML that XAE generates. They carry GUIDs, links, and process-image offsets. Change PLC code, libraries, IO, and mappings through the sysman-mcp tools (or XAE) rather than by hand-editing XML. Only edit the ST inside `<![CDATA[...]]>` blocks directly if no tool is available.
 - `PLC.tmc` is tracked on purpose (see `.gitignore`). Commit it along with PLC changes.
-- sysman-mcp `plc_create_pou` limits: it can't add methods or properties to an `INTERFACE`, and it can't add properties to an FB inside a folder (methods work). Create FBs that need properties at the PLC project root. New properties get Get and Set; delete the `Set` child with `plc_delete_pou` to make one read-only. To write an accessor, call `plc_write_code` with the FB's tid plus `child_name` and `accessor`. Create children one call at a time, not in parallel.
+- sysman-mcp `plc_create_pou` limits: it can't add methods or properties to an `INTERFACE` (add those in XAE). Adding properties to an FB inside a folder failed once but works now; if it fails again, create the FB at the PLC project root. New properties get Get and Set; delete the `Set` child with `plc_delete_pou` to make one read-only. To write an accessor, call `plc_write_code` with the FB's tid plus `child_name` and `accessor`. Create children one call at a time, not in parallel.
 - Distributed-clock (DC) settings on the EtherCAT terminals and couplers matter for print-signal timing (see commits "Adjust DC time settings" and "Fixed EK1818"). Don't reset terminal DC/sync settings unintentionally.
 
 ## ApplicationBase library (PLC OOP framework)

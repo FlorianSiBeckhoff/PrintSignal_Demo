@@ -19,7 +19,7 @@ END_VAR
 VAR CONSTANT
 	DUTY_CYCLE_MIN	 : LREAL := 0.0;
 	DUTY_CYCLE_MAX	 : LREAL := 100.0;
-	RESET_PULSE_TIME : TIME	 := T#100MS;
+	RESET_PULSE_TIME : TIME	 := T#500MS;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>

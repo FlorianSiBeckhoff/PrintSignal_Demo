@@ -19,16 +19,22 @@
     <LibraryReferences>{1e1d5b5d-81f1-4712-8bc4-78ea97ce6a29}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Components\E_OpMode.TcDUT">
+    <Compile Include="Components\PWM\DUT\ST_PwmOutput_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\Interface\I_PwmOutput.TcIO">
+    <Compile Include="Components\PWM\Interface\I_PwmOutput.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\PwmOutput_ED2504.TcPOU">
+    <Compile Include="Components\PWM\PwmOutput_ED2504.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\RpmToDutyCycle.TcPOU">
+    <Compile Include="Components\PWM\PwmOutput_HMI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\PWM\RpmToDutyCycle.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="E_OpMode.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVL_IO.TcGVL">
@@ -144,13 +150,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components" />
-    <Folder Include="Components\Interface" />
+    <Folder Include="Components\PWM" />
+    <Folder Include="Components\PWM\Interface" />
+    <Folder Include="Components\PWM\DUT" />
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -229,14 +237,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Boolean">System.Boolean</Type>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

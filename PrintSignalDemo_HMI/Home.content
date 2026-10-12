@@ -17,30 +17,85 @@
 </div>
 <div id="OperationModeTitle" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-hmigpt-select="false" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="40" data-tchmi-left-unit="px" data-tchmi-right="0" data-tchmi-text="Operation Mode" data-tchmi-text-font-size="20" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-mode="Content" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
 </div>
-<div id="OperationModeSelect" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCombobox" data-hmigpt-select="false" data-tchmi-auto-focus-out="True" data-tchmi-selected-index="%s%PLC1.MAIN.OperationMode|BindingMode=TwoWay%/s%" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="8" data-tchmi-left-unit="px" data-tchmi-text="Combobox" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="257" data-tchmi-width-unit="px">
-<script data-tchmi-target-attribute="data-tchmi-src-data" type="application/json">
+<div id="OperationModeToggle" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiMultiState" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-left="8" data-tchmi-left-unit="px" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-height="48" data-tchmi-height-unit="px" data-tchmi-state="%s%PLC1.MAIN.OperationMode%/s%" data-tchmi-fallback-text="---" data-tchmi-text-font-size="18" data-tchmi-text-font-weight="Bold" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-icon-width="28" data-tchmi-icon-width-unit="px" data-tchmi-icon-height="28" data-tchmi-icon-height-unit="px" data-tchmi-icon-horizontal-alignment="Left" data-tchmi-icon-vertical-alignment="Center" data-tchmi-tooltip="Click to toggle Manual / Auto">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "id": 0,
-    "text": "Manual",
-    "value": 0
+    "state": 0,
+    "stateText": "Manual",
+    "stateIcon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTggMTFWNmEyIDIgMCAwIDAtMi0yYTIgMiAwIDAgMC0yIDIiLz48cGF0aCBkPSJNMTQgMTBWNGEyIDIgMCAwIDAtMi0yYTIgMiAwIDAgMC0yIDJ2MiIvPjxwYXRoIGQ9Ik0xMCAxMC41VjZhMiAyIDAgMCAwLTItMmEyIDIgMCAwIDAtMiAydjgiLz48cGF0aCBkPSJNMTggOGEyIDIgMCAxIDEgNCAwdjZhOCA4IDAgMCAxLTggOGgtMmMtMi44IDAtNC41LS44Ni01Ljk5LTIuMzRsLTMuNi0zLjZhMiAyIDAgMCAxIDIuODMtMi44Mkw3IDE1Ii8+PC9zdmc+",
+    "stateBackgroundColor": {
+      "color": "#d98b00"
+    },
+    "stateTextColor": {
+      "color": "#ffffff"
+    }
   },
   {
-    "id": 1,
-    "text": "Auto",
-    "value": 1
+    "state": 1,
+    "stateText": "Auto",
+    "stateIcon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMi41Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI5Ii8+PC9zdmc+",
+    "stateBackgroundColor": {
+      "color": "#2e9e44"
+    },
+    "stateTextColor": {
+      "color": "#ffffff"
+    }
   }
 ]
 </script>
-<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+<script data-tchmi-target-attribute="data-tchmi-fallback-background-color" type="application/json">
 {
-  "top": 3,
-  "right": 3,
-  "bottom": 3,
-  "left": 3
+  "color": "#5a5f66"
 }
 </script>
-
+<script data-tchmi-target-attribute="data-tchmi-icon-padding" type="application/json">
+{
+  "left": 14,
+  "leftUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "right": 0,
+  "rightUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 24,
+  "topLeftUnit": "px",
+  "topRight": 24,
+  "topRightUnit": "px",
+  "bottomRight": 24,
+  "bottomRightUnit": "px",
+  "bottomLeft": 24,
+  "bottomLeftUnit": "px"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "OperationModeToggle.onPressed",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "// Toggle MAIN.OperationMode between manual (0) and auto (1)",
+          "var current = TcHmi.Controls.get('OperationModeToggle').getState();",
+          "TcHmi.Symbol.writeEx('%s%PLC1.MAIN.OperationMode%/s%', current === 1 ? 0 : 1);"
+        ],
+        "injectContextObject": false,
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="PwmOutputPanel" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="440" data-tchmi-width-unit="px" data-tchmi-height="316" data-tchmi-height-unit="px" data-tchmi-target-user-control="UserControls/PwmOutput_HMI.usercontrol" data-tchmi-data="%s%ADS.PLC1.MAIN.PwmHmi.PwmOutput_HMI%/s%">
 </div>
 </div>
 </div>

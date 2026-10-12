@@ -57,7 +57,11 @@
       "type": "Stylesheet"
     }
   ],
-  "userControls": [],
+  "userControls": [
+    {
+      "url": "UserControls/PwmOutput_HMI.usercontrol"
+    }
+  ],
   "controls": [],
   "content": [
     {

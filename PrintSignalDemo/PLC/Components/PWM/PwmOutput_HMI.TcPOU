@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PwmOutput_HMI" Id="{651da49e-a142-4c9a-a486-b5d2320b27b5}" SpecialFunc="None">
+    <Declaration><![CDATA[// HMI function for a PWM output. While enabled (e.g. manual mode) the HMI setpoints
+// for RPM and frequency are written to the PWM output; while disabled the setpoints
+// follow the actual values so switching to manual is bumpless.
+FUNCTION_BLOCK PwmOutput_HMI EXTENDS HmiFunction
+VAR
+	PwmOutput : I_PwmOutput;
+	RpmScale  : I_TransformLRealValue; // RPM <-> duty cycle [%]
+	{ attribute 'TcHmiSymbol.AddSymbol' }
+	{ attribute 'TcHmiSymbol.AddSymbol.UserGroups' := '__SystemAdministrators,Admin' }
+	PwmOutput_HMI : ST_PwmOutput_HMI;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="ControlObject" Id="{b48a9272-bf31-4b16-9318-fa2e0c7401ad}">
+      <Declaration><![CDATA[PROPERTY ControlObject : I_Base]]></Declaration>
+      <Set Name="Set" Id="{1080d279-b3d0-4441-b792-b51dde2ce7cf}">
+        <Declaration><![CDATA[PUBLIC
+VAR
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[__QUERYINTERFACE(ControlObject, PwmOutput);]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="CyclicLogic" Id="{b16894ce-3e9e-4f8a-9025-ae68c6bdd2ea}">
+      <Declaration><![CDATA[METHOD CyclicLogic
+VAR
+	Resettable : I_Resettable;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF PwmOutput = 0 OR RpmScale = 0 THEN
+	RETURN;
+END_IF
+
+// Status
+PwmOutput_HMI.Name		 := Name;
+PwmOutput_HMI.HmiEnabled := Enabled;
+PwmOutput_HMI.DutyCycle	 := PwmOutput.DutyCycle;
+PwmOutput_HMI.Frequency	 := PwmOutput.Frequency;
+PwmOutput_HMI.Rpm		 := RpmScale.Transform(PwmOutput.DutyCycle, TRUE);
+PwmOutput_HMI.Error		 := PwmOutput.Error;
+PwmOutput_HMI.Warning	 := PwmOutput.Warning;
+IF Enabled THEN
+	PwmOutput.SetFrequency(PwmOutput_HMI.FrequencySetpoint);
+	PwmOutput.SetDutyCycle(RpmScale.Transform(PwmOutput_HMI.RpmSetpoint));
+	IF PwmOutput_HMI.Reset AND __QUERYINTERFACE(PwmOutput, Resettable) THEN
+		Resettable.Reset();
+	END_IF
+ELSE
+	// Track the actual values so the HMI starts from them when it gets enabled
+	PwmOutput_HMI.FrequencySetpoint := PwmOutput_HMI.Frequency;
+	PwmOutput_HMI.RpmSetpoint		:= PwmOutput_HMI.Rpm;
+END_IF
+
+PwmOutput_HMI.Reset := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_Init" Id="{5ec7e62e-051b-4d51-8d73-134eda11e8ab}">
+      <Declaration><![CDATA[//FB_Init is always available implicitly and it is used primarily for initialization.
+//The return value is not evaluated. For a specific influence, you can also declare the
+//methods explicitly and provide additional code there with the standard initialization
+//code. You can evaluate the return value.
+METHOD FB_Init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // TRUE: the retain variables are initialized (reset warm / reset cold)
+	bInCopyCode	 : BOOL; // TRUE: the instance will be copied to the copy code afterward (online change)
+	Name		 : T_MaxString;
+	PwmOutput	 : I_PwmOutput;
+	RpmScale	 : I_TransformLRealValue;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.PwmOutput := PwmOutput;
+THIS^.RpmScale	:= RpmScale;
+ControlType		:= 'PwmOutput';
+LinkObject		:= 'PwmOutput_HMI';]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

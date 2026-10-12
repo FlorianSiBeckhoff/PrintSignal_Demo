@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_PwmOutput_HMI" Id="{66fbf164-0150-4285-a7aa-fceaba346305}">
+    <Declaration><![CDATA[TYPE ST_PwmOutput_HMI EXTENDS ST_HmiFunction :
+	STRUCT
+		// Commands from the HMI (only applied while the HMI function is enabled)
+		RpmSetpoint		  : LREAL; // [rpm]
+		FrequencySetpoint : LREAL; // [Hz]
+		Reset			  : BOOL;  // Acknowledge PWM error, cleared by the PLC
+		// Status to the HMI
+		Rpm				  : LREAL; // [rpm] actual, calculated back from the duty cycle
+		DutyCycle		  : LREAL; // [%]
+		Frequency		  : LREAL; // [Hz]
+		Error			  : BOOL;
+		Warning			  : BOOL;
+	END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>
