@@ -14,7 +14,6 @@ VAR_GLOBAL
 
 	// 
 	EL2008_DriveEnable AT %Q* : BOOL;
-	EL2008_QuickStop   AT %Q* : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CTComPlcObjDef">
-	<Instance TmcHash="{C9167A0C-20A8-F324-9149-7DC5954BEBB9}">
+	<Instance TmcHash="{35FE1F9F-4236-8AE7-2991-CF615A376549}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -34,10 +34,6 @@
 			<Var>
 				<Name>GVL_IO.EL2008_DriveEnable</Name>
 				<Comment><![CDATA[ ]]></Comment>
-				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>GVL_IO.EL2008_QuickStop</Name>
 				<Type>BOOL</Type>
 			</Var>
 		</Vars>

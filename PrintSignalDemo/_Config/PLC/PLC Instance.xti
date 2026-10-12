@@ -22,7 +22,6 @@
 		<OwnerA>
 			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 3 (EK1100)^Term 16 (EL2008)">
 				<Link VarA="PlcTask Outputs^GVL_IO.EL2008_DriveEnable" VarB="Channel 1^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^GVL_IO.EL2008_QuickStop" VarB="Channel 2^Output" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 3 (EK1100)^Term 4 (ED2504)">
 				<Link VarA="PlcTask Inputs^GVL_IO.ED2504_PwmError" VarB="PWM Inputs Device^PWM Error" Size="1"/>
