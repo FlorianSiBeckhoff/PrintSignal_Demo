@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CTComPlcObjDef">
-	<Instance TmcHash="{398DFC22-7671-55E2-46A9-3FCB3A313980}">
+	<Instance TmcHash="{C9167A0C-20A8-F324-9149-7DC5954BEBB9}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
 			<Var>
@@ -29,6 +29,15 @@
 			<Var>
 				<Name>GVL_IO.ED2504_PwmReset</Name>
 				<Comment><![CDATA[ PWM Outputs Device (0x1700) / PWM Reset]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.EL2008_DriveEnable</Name>
+				<Comment><![CDATA[ ]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_IO.EL2008_QuickStop</Name>
 				<Type>BOOL</Type>
 			</Var>
 		</Vars>

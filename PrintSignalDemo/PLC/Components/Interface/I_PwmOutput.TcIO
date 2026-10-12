@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="I_PwmOutput" Id="{260128b8-e515-4c4c-b66b-f260b6e78b88}">
+    <Declaration><![CDATA[INTERFACE I_PwmOutput EXTENDS I_Base
+]]></Declaration>
+    <Property Name="DutyCycle" Id="{27ad222a-8ecf-4696-b6cd-7b6cae89eb31}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY DutyCycle : LREAL // [%]]]></Declaration>
+      <Get Name="Get" Id="{a65cb776-15c5-49d0-a59d-2bd74961477e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Error" Id="{7e37bffa-2441-41c9-9583-252eb6b9c79f}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Error : BOOL // PWM Error reported by the terminal]]></Declaration>
+      <Get Name="Get" Id="{8df068fb-a921-4058-a2af-0faab27faaed}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Frequency" Id="{67001024-25ff-4327-b4bb-b60ac14c385f}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Frequency : LREAL // [Hz]]]></Declaration>
+      <Get Name="Get" Id="{ab34bae3-5c21-4eee-9d44-805557b5760f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="SetDutyCycle" Id="{1913f300-7f9e-4c10-88e9-6dcd26141866}">
+      <Declaration><![CDATA[// Sets the PWM duty cycle in percent. Returns FALSE and keeps the previous value if DutyCycle is outside 0..100 %.
+METHOD SetDutyCycle : BOOL
+VAR_INPUT
+	DutyCycle : LREAL; // [%]
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="SetFrequency" Id="{b7395c19-bb42-402b-a2a6-6bcc87f5f850}">
+      <Declaration><![CDATA[// Sets the PWM frequency in Hz. Returns FALSE and keeps the previous value if Frequency is negative.
+METHOD SetFrequency : BOOL
+VAR_INPUT
+	Frequency : LREAL; // [Hz]
+END_VAR]]></Declaration>
+    </Method>
+    <Property Name="Warning" Id="{67f7d4ae-1f51-4433-8c88-005ec52173db}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY Warning : BOOL // PWM Warning reported by the terminal]]></Declaration>
+      <Get Name="Get" Id="{0d82b74f-f756-48b5-9305-0a52b9d34b2f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

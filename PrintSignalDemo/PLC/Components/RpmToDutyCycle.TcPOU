@@ -10,8 +10,8 @@ VAR
 	_RpmHigh : LREAL := 1000.0;
 END_VAR
 VAR CONSTANT
-	DUTY_CYCLE_MIN : LREAL := 0.0;
-	DUTY_CYCLE_MAX : LREAL := 100.0;
+	DUTY_CYCLE_MIN : LREAL := 10.0;
+	DUTY_CYCLE_MAX : LREAL := 90.0;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
@@ -61,7 +61,7 @@ END_VAR]]></Declaration>
 METHOD Transform : LREAL
 VAR_INPUT
 	Value	: LREAL;
-	Reverse : BOOL := FALSE;
+    Reverse : BOOL := FALSE;
 END_VAR
 VAR
 	Span : LREAL;
@@ -73,10 +73,12 @@ IF Span = 0.0 THEN
 	RETURN;
 END_IF
 
-IF NOT Reverse THEN
-	Transform := LIMIT(DUTY_CYCLE_MIN, (Value - _RpmLow) / Span * DUTY_CYCLE_MAX, DUTY_CYCLE_MAX);
+IF Value <= _RpmLow THEN
+	Transform := 10.0;
+ELSIF Value >= _RpmHigh THEN
+	Transform := 90.0;
 ELSE
-	Transform := _RpmLow + LIMIT(DUTY_CYCLE_MIN, Value, DUTY_CYCLE_MAX) / DUTY_CYCLE_MAX * Span;
+	Transform := 10.0 + (Value - _RpmLow) / (_RpmHigh - _RpmLow) * 80.0;
 END_IF]]></ST>
       </Implementation>
     </Method>

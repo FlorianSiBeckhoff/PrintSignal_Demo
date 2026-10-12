@@ -9,7 +9,7 @@ VAR
 								 PwmErrorInput	 := GVL_IO.ED2504_PwmError,
 								 PwmWarningInput := GVL_IO.ED2504_PwmWarning,
 								 PwmResetOutput	 := GVL_IO.ED2504_PwmReset);
-	RpmScale  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 3000.0);
+	RpmScale  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 10000.0);
 
 	TargetRpm : LREAL := 0.0;	 // [rpm]
 	Frequency : LREAL := 100.0; // [Hz]

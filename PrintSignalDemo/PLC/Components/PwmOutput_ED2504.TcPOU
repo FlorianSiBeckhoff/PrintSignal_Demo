@@ -4,7 +4,7 @@
     <Declaration><![CDATA[// PWM output component for one channel of an ED2504 terminal (PDO PWM_OUT_REAL32).
 // Command with SetDutyCycle (0..100 %) and SetFrequency (Hz); the setpoints are written
 // to the process image in CyclicLogic.
-FUNCTION_BLOCK PwmOutput_ED2504 EXTENDS CyclicComponent IMPLEMENTS I_Resettable
+FUNCTION_BLOCK PwmOutput_ED2504 EXTENDS CyclicComponent IMPLEMENTS I_Resettable, I_PwmOutput
 VAR
 	DutyCycleOutput : REFERENCE TO REAL; // PWM Outputs / PWM Duty Cycle [%]
 	FrequencyOutput : REFERENCE TO REAL; // PWM Outputs / PWM Frequency [Hz]
@@ -28,8 +28,9 @@ END_VAR]]></Declaration>
       <Declaration><![CDATA[METHOD CyclicLogic]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF __ISVALIDREF(DutyCycleOutput) THEN
-	DutyCycleOutput := LREAL_TO_REAL(_DutyCycle);
+	DutyCycleOutput := LREAL_TO_REAL(_DutyCycle / 100.0);
 END_IF
+
 IF __ISVALIDREF(FrequencyOutput) THEN
 	FrequencyOutput := LREAL_TO_REAL(_Frequency);
 END_IF
@@ -119,7 +120,7 @@ VAR_INPUT
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF DutyCycle >= DUTY_CYCLE_MIN AND DutyCycle <= DUTY_CYCLE_MAX THEN
-	_DutyCycle := DutyCycle;
+	_DutyCycle	 := DutyCycle;
 	SetDutyCycle := TRUE;
 END_IF]]></ST>
       </Implementation>
@@ -132,7 +133,7 @@ VAR_INPUT
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF Frequency >= 0.0 THEN
-	_Frequency := Frequency;
+	_Frequency	 := Frequency;
 	SetFrequency := TRUE;
 END_IF]]></ST>
       </Implementation>

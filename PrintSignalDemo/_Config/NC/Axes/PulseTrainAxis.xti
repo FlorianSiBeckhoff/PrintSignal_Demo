@@ -1429,7 +1429,10 @@ External Setpoint Generation:
 		<AxisPara>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
-		<Encoder Name="Enc" EncType="1">
+		<Encoder Name="Enc" EncType="4">
+			<EncPara MaxCount="#xffffffff">
+				<Inc RefMode="2"/>
+			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1489,6 +1492,7 @@ External Setpoint Generation:
 		<Drive Name="Drive" DrvType="5">
 			<DrvPara>
 				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1577,4 +1581,23 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 7 (EK1100)^Term 14 (EL2522)">
+				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="ENC Status Channel 1^Counter value"/>
+				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Counter overflow" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Counter underflow" Size="1" OffsA="3"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Set counter done" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^Sync error" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^TxPDO State" Size="1" OffsA="6"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status Channel 1^Status^TxPDO Toggle" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control Channel 1^Control^Set counter" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl2" VarB="ENC Control Channel 1^Control^Reserved" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="ENC Control Channel 1^Set counter value"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

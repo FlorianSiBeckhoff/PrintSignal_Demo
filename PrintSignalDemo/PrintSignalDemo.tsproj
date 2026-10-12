@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27">
-	<Project ProjectGUID="{8571DEF3-DA9F-4143-AC08-A62A9E0C19F8}" Target64Bit="true" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{8571DEF3-DA9F-4143-AC08-A62A9E0C19F8}" TargetNetId="192.168.0.61.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Settings MaxCpus="4" NonWinCpus="2">
 				<Cpu CpuId="3"/>
@@ -19,7 +19,7 @@
 		</Plc>
 		<Io>
 			<Device File="Device 2 (EtherCAT).xti" Id="2"/>
-			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="192.168.1.84.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="6">
+			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="192.168.0.61.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="6">
 				<Name>Device 3 (EtherCAT)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -31,6 +31,9 @@
 				<Image Id="5" AddrType="9" ImageType="3">
 					<Name>Image</Name>
 				</Image>
+				<Image Id="8" AddrType="10" ImageType="3">
+					<Name>Image-2</Name>
+				</Image>
 				<Box File="Term 3 (EK1100).xti" Id="3">
 					<EtherCAT PortABoxInfo="#x00ffffff"/>
 				</Box>
@@ -40,9 +43,12 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500881000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{00000000-0010-0304-3000-040310000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-0020-0304-3000-040320000403}" Id="#x02030060"/>
+		<MappingInfo Identifier="{00000000-0040-0304-3000-040341000403}" Id="#x02030070"/>
 		<MappingInfo Identifier="{00000000-0050-0304-3000-040350000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-0060-0304-3000-040361000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{00000000-0060-0304-3000-040362000403}" Id="#x02030050"/>
 		<MappingInfo Identifier="{00000000-0070-0304-3000-040371000403}" Id="#x02030030"/>
 	</Mappings>
 </TcSmProject>
