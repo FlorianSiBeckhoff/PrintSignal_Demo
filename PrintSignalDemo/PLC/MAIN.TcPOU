@@ -3,6 +3,7 @@
   <POU Name="MAIN" Id="{b79e520a-676f-4165-bc70-76a19f5b49cd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+    OperationMode : E_OpMode;
 	PwmOutput : PwmOutput_ED2504(Name			 := 'Motor RPM Target',
 								 DutyCycleOutput := GVL_IO.ED2504_Ch1_DutyCycle,
 								 FrequencyOutput := GVL_IO.ED2504_Ch1_Frequency,

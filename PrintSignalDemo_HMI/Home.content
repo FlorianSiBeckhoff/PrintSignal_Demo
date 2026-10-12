@@ -5,4 +5,42 @@
   data-tchmi-left="0"
   data-tchmi-width="100"
   data-tchmi-height="100"
- data-tchmi-height-mode="Content" data-tchmi-height-unit="%" data-tchmi-width-mode="Value" data-tchmi-width-unit="%"></div>
+ data-tchmi-height-mode="Content" data-tchmi-height-unit="%" data-tchmi-width-mode="Value" data-tchmi-width-unit="%"><div id="OperationGrid" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-hmigpt-select="false" data-tchmi-height="300" data-tchmi-height-mode="Content" data-tchmi-height-unit="px" data-tchmi-left="1" data-tchmi-left-unit="%" data-tchmi-min-width="800" data-tchmi-min-width-unit="px" data-tchmi-top="16" data-tchmi-top-unit="px" data-tchmi-width="98" data-tchmi-width-unit="%">
+<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+[{"width": 1, "widthMode": "Value", "widthUnit": "factor", "overflow": false}, {"width": 3, "widthMode": "Value", "widthUnit": "factor", "overflow": false}]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-row-options" type="application/json">
+[{"height": 1, "heightMode": "Content", "heightUnit": "factor", "overflow": false}]
+</script>
+
+<div id="OperationModeIcon" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-hmigpt-select="false" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-height="24" data-tchmi-height-unit="px" data-tchmi-left="8" data-tchmi-left-unit="px" data-tchmi-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1NTU1NTUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXNldHRpbmdzIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIj48L2NpcmNsZT48cGF0aCBkPSJNMTkuNCAxNWExLjY1IDEuNjUgMCAwIDAgLjMzIDEuODJsLjA2LjA2YTIgMiAwIDAgMSAwIDIuODMgMiAyIDAgMCAxLTIuODMgMGwtLjA2LS4wNmExLjY1IDEuNjUgMCAwIDAtMS44Mi0uMzMgMS42NSAxLjY1IDAgMCAwLTEgMS41MVYyMWEyIDIgMCAwIDEtMiAyIDIgMiAwIDAgMS0yLTJ2LS4wOUExLjY1IDEuNjUgMCAwIDAgOSAxOS40YTEuNjUgMS42NSAwIDAgMC0xLjgyLjMzbC0uMDYuMDZhMiAyIDAgMCAxLTIuODMgMCAyIDIgMCAwIDEgMC0yLjgzbC4wNi0uMDZhMS42NSAxLjY1IDAgMCAwIC4zMy0xLjgyIDEuNjUgMS42NSAwIDAgMC0xLjUxLTFIM2EyIDIgMCAwIDEtMi0yIDIgMiAwIDAgMSAyLTJoLjA5QTEuNjUgMS42NSAwIDAgMCA0LjYgOWExLjY1IDEuNjUgMCAwIDAtLjMzLTEuODJsLS4wNi0uMDZhMiAyIDAgMCAxIDAtMi44MyAyIDIgMCAwIDEgMi44MyAwbC4wNi4wNmExLjY1IDEuNjUgMCAwIDAgMS44Mi4zM0g5YTEuNjUgMS42NSAwIDAgMCAxLTEuNTFWM2EyIDIgMCAwIDEgMi0yIDIgMiAwIDAgMSAyIDJ2LjA5YTEuNjUgMS42NSAwIDAgMCAxIDEuNTEgMS42NSAxLjY1IDAgMCAwIDEuODItLjMzbC4wNi0uMDZhMiAyIDAgMCAxIDIuODMgMCAyIDIgMCAwIDEgMCAyLjgzbC0uMDYuMDZhMS42NSAxLjY1IDAgMCAwLS4zMyAxLjgyVjlhMS42NSAxLjY1IDAgMCAwIDEuNTEgMUgyMWEyIDIgMCAwIDEgMiAyIDIgMiAwIDAgMS0yIDJoLS4wOWExLjY1IDEuNjUgMCAwIDAtMS41MSAxeiI+PC9wYXRoPjwvc3ZnPg==" data-tchmi-top="8" data-tchmi-top-unit="px" data-tchmi-width="24" data-tchmi-width-unit="px">
+</div>
+<div id="OperationModeTitle" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-hmigpt-select="false" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="40" data-tchmi-left-unit="px" data-tchmi-right="0" data-tchmi-text="Operation Mode" data-tchmi-text-font-size="20" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-mode="Content" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+</div>
+<div id="OperationModeSelect" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCombobox" data-hmigpt-select="false" data-tchmi-auto-focus-out="True" data-tchmi-selected-index="%s%PLC1.MAIN.OperationMode|BindingMode=TwoWay%/s%" data-tchmi-grid-column-index="0" data-tchmi-grid-row-index="0" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="8" data-tchmi-left-unit="px" data-tchmi-text="Combobox" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="257" data-tchmi-width-unit="px">
+<script data-tchmi-target-attribute="data-tchmi-src-data" type="application/json">
+[
+  {
+    "id": 0,
+    "text": "Manual",
+    "value": 0
+  },
+  {
+    "id": 1,
+    "text": "Auto",
+    "value": 1
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+</div>
+</div>

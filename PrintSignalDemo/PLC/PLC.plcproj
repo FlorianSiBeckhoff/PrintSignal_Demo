@@ -19,6 +19,9 @@
     <LibraryReferences>{1e1d5b5d-81f1-4712-8bc4-78ea97ce6a29}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Components\E_OpMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Components\Interface\I_PwmOutput.TcIO">
       <SubType>Code</SubType>
     </Compile>

@@ -2797,6 +2797,13 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.OperationMode": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::OperationMode",
+            "SCHEMA": {}
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
