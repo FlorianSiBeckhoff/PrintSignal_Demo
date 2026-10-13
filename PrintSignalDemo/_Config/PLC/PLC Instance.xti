@@ -30,6 +30,10 @@
 				<Link VarA="PlcTask Outputs^GVL_IO.ED2504_Ch1_Frequency" VarB="SlotGroup 1 (Output 1, Input 1) (PWM_OUT_REAL32_DI)^PWM Outputs^PWM Frequency"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.ED2504_PwmReset" VarB="PWM Outputs Device^PWM Reset" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Encoder">
+				<Link VarA="PlcTask Inputs^MAIN.EncoderAxis_Ref.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.EncoderAxis_Ref.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
 		</OwnerA>
 	</Mappings>
 </TcSmItem>

@@ -3,22 +3,30 @@
   <POU Name="MAIN" Id="{b79e520a-676f-4165-bc70-76a19f5b49cd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-    OperationMode : E_OpMode;
-	PwmOutput : PwmOutput_ED2504(Name			 := 'Motor RPM Target',
-								 DutyCycleOutput := GVL_IO.ED2504_Ch1_DutyCycle,
-								 FrequencyOutput := GVL_IO.ED2504_Ch1_Frequency,
-								 PwmErrorInput	 := GVL_IO.ED2504_PwmError,
-								 PwmWarningInput := GVL_IO.ED2504_PwmWarning,
-								 PwmResetOutput	 := GVL_IO.ED2504_PwmReset);
-	RpmScale  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 10000.0);
-	PwmHmi	  : PwmOutput_HMI(Name := 'Motor RPM Target', PwmOutput := PwmOutput, RpmScale := RpmScale);
+	OperationMode : E_OpMode;
+	PwmOutput	  : PwmOutput_ED2504(Name := 'Motor RPM Target', DutyCycleOutput := GVL_IO.ED2504_Ch1_DutyCycle, FrequencyOutput := GVL_IO.ED2504_Ch1_Frequency, PwmErrorInput := GVL_IO.ED2504_PwmError, PwmWarningInput := GVL_IO.ED2504_PwmWarning, PwmResetOutput := GVL_IO.ED2504_PwmReset);
+	RpmScale	  : RpmToDutyCycle := (RpmLow := 0.0, RpmHigh := 10000.0);
+	PwmHmi		  : PwmOutput_HMI(Name := 'Motor RPM Target', PwmOutput := PwmOutput, RpmScale := RpmScale);
+	TargetRpm	  : LREAL := 0.0;	// [rpm]
+	Frequency	  : LREAL := 100.0; // [Hz]
+	Reset		  : BOOL;
 
-	TargetRpm : LREAL := 0.0;	 // [rpm]
-	Frequency : LREAL := 100.0; // [Hz]
-	ResetPwm  : BOOL;
+	// Encoder Axis 
+	EncoderAxis_Ref : AXIS_REF;
+	EncoderAxis		: Mc2AxisPTP('', EncoderAxis_Ref);
+	EncoderAxis_HMI : AxisPTP_HMI('Encoder Axis', EncoderAxis, '°');
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Manual: RPM and frequency come from the HMI (PwmHmi). Auto: from the program.
+      <ST><![CDATA[PwmMotorControl();
+Reset := FALSE;]]></ST>
+    </Implementation>
+    <Method Name="PwmMotorControl" Id="{67b81d93-0556-454a-b236-89d88032501d}">
+      <Declaration><![CDATA[METHOD PwmMotorControl
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Manual: RPM and frequency come from the HMI (PwmHmi). Auto: from the program.
 IF OperationMode = E_OpMode.auto THEN
 	PwmHmi.Disable();
 	PwmOutput.SetFrequency(Frequency);
@@ -27,14 +35,14 @@ ELSE
 	PwmHmi.Enable();
 END_IF
 
-IF ResetPwm THEN
-	ResetPwm := FALSE;
+IF Reset THEN
 	PwmOutput.Reset();
 END_IF
 
 GVL_IO.EL2008_DriveEnable := NOT GVL_IO.ED2504_PwmReset AND PwmOutput.DutyCycle > 10.0;
 PwmHmi.CyclicLogic();
 PwmOutput.CyclicLogic();]]></ST>
-    </Implementation>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>

@@ -78,8 +78,11 @@
 		<Box File="Term 11 (EL1252).xti" Id="11">
 			<EtherCAT PortABoxInfo="#x01000009"/>
 		</Box>
-		<Box File="Term 5 (EL9011).xti" Id="12">
+		<Box File="Term 17 (EL1008).xti" Id="17">
 			<EtherCAT PortABoxInfo="#x0100000b"/>
+		</Box>
+		<Box File="Term 5 (EL9011).xti" Id="12">
+			<EtherCAT PortABoxInfo="#x01000011"/>
 		</Box>
 	</Box>
 </TcSmItem>

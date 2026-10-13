@@ -1427,10 +1427,11 @@ External Setpoint Generation:
 	<Axis Id="1" CreateSymbols="true" AxisType="5">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<General UnitName="°"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="8192" MaxCount="#xffffffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">

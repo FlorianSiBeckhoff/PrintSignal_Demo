@@ -3,7 +3,8 @@
 	<Project ProjectGUID="{8571DEF3-DA9F-4143-AC08-A62A9E0C19F8}" TargetNetId="192.168.0.61.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Settings MaxCpus="4" NonWinCpus="2">
-				<Cpu CpuId="3"/>
+				<Cpu CpuId="2"/>
+				<Cpu CpuId="3" BaseTime="2500"/>
 			</Settings>
 			<Tasks>
 				<Task Id="5" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
@@ -49,6 +50,5 @@
 		<MappingInfo Identifier="{00000000-0040-0304-3000-040341000403}" Id="#x02030070"/>
 		<MappingInfo Identifier="{00000000-0050-0304-3000-040350000403}" Id="#x02030010"/>
 		<MappingInfo Identifier="{00000000-0060-0304-3000-040362000403}" Id="#x02030050"/>
-		<MappingInfo Identifier="{00000000-0070-0304-3000-040371000403}" Id="#x02030030"/>
 	</Mappings>
 </TcSmProject>
