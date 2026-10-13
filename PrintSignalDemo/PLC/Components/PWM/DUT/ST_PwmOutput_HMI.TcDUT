@@ -5,12 +5,12 @@
 	STRUCT
 		// Commands from the HMI (only applied while the HMI function is enabled)
 		RpmSetpoint		  : LREAL; // [rpm]
-		FrequencySetpoint : LREAL; // [Hz]
+		FrequencySetpoint : LREAL := 100; // [Hz]
 		Reset			  : BOOL;  // Acknowledge PWM error, cleared by the PLC
 		// Status to the HMI
 		Rpm				  : LREAL; // [rpm] actual, calculated back from the duty cycle
 		DutyCycle		  : LREAL; // [%]
-		Frequency		  : LREAL; // [Hz]
+		Frequency		  : LREAL := 100; // [Hz]
 		Error			  : BOOL;
 		Warning			  : BOOL;
 	END_STRUCT

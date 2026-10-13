@@ -97,5 +97,7 @@
 </div>
 <div id="PwmOutputPanel" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="440" data-tchmi-width-unit="px" data-tchmi-height="316" data-tchmi-height-unit="px" data-tchmi-target-user-control="UserControls/PwmOutput_HMI.usercontrol" data-tchmi-data="%s%ADS.PLC1.MAIN.PwmHmi.PwmOutput_HMI%/s%">
 </div>
+<div id="EncoderVelocityPanel" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="472" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="440" data-tchmi-width-unit="px" data-tchmi-height="196" data-tchmi-height-unit="px" data-tchmi-target-user-control="UserControls/AxisVelocity_HMI.usercontrol" data-tchmi-data="%s%ADS.PLC1.MAIN.EncoderAxis_HMI.AxisPTP_HMI%/s%">
+</div>
 </div>
 </div>

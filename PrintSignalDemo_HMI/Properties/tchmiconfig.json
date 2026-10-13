@@ -59,6 +59,9 @@
   ],
   "userControls": [
     {
+      "url": "UserControls/AxisVelocity_HMI.usercontrol"
+    },
+    {
       "url": "UserControls/PwmOutput_HMI.usercontrol"
     }
   ],

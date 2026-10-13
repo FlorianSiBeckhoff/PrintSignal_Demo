@@ -41,7 +41,9 @@ END_IF
 
 GVL_IO.EL2008_DriveEnable := NOT GVL_IO.ED2504_PwmReset AND PwmOutput.DutyCycle > 10.0;
 PwmHmi.CyclicLogic();
-PwmOutput.CyclicLogic();]]></ST>
+PwmOutput.CyclicLogic();
+EncoderAxis.CyclicLogic();
+EncoderAxis_HMI.CyclicLogic();]]></ST>
       </Implementation>
     </Method>
   </POU>

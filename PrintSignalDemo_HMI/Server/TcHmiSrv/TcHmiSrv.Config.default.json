@@ -31,6 +31,506 @@
     "DEFAULTTIMEZONE": "client",
     "DEFINITIONS": {
         "ADS": {
+            "ADS-PLC1.ARRAY_0..9_OF-BOOL": {
+                "items": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                },
+                "maxItems": 10,
+                "minItems": 10,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..9_OF-STRING-80": {
+                "items": {
+                    "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                },
+                "maxItems": 10,
+                "minItems": 10,
+                "type": "array"
+            },
+            "ADS-PLC1.ApplicationBase.Button": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$implements": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.I_Button"
+                    ],
+                    "PouType": "FunctionBlock",
+                    "TcImplements": "ApplicationBase.I_Button"
+                },
+                "properties": {
+                    "Active": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
+                    },
+                    "Name": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-SET-STRING-80"
+                    },
+                    "_Active": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "_Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "_Permissive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.PermissiveInterlock"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "_Name",
+                    "_Active",
+                    "_Permissive"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ApplicationBase.I_Base": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.IQueryInterface"
+                    ],
+                    "TcExtends": "IQueryInterface",
+                    "TcPlcInterfaceType": ""
+                },
+                "properties": {
+                    "__GetInterfaceReference": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.METHOD-RETURNING-BOOL-PARAMETERS-nInterfaceId-DINT--pRef-POINTER-TO-POINTER-TO-DWORD"
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.ApplicationBase.I_Button": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.I_Base"
+                    ],
+                    "TcExtends": "ApplicationBase.I_Base",
+                    "TcPlcInterfaceType": ""
+                },
+                "properties": {
+                    "Active": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
+                    },
+                    "Name": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-SET-STRING-80"
+                    },
+                    "__GetInterfaceReference": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.METHOD-RETURNING-BOOL-PARAMETERS-nInterfaceId-DINT--pRef-POINTER-TO-POINTER-TO-DWORD"
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.ApplicationBase.I_Permissive": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.I_Base"
+                    ],
+                    "TcExtends": "ApplicationBase.I_Base",
+                    "TcPlcInterfaceType": ""
+                },
+                "properties": {
+                    "OK": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
+                    },
+                    "__GetInterfaceReference": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.METHOD-RETURNING-BOOL-PARAMETERS-nInterfaceId-DINT--pRef-POINTER-TO-POINTER-TO-DWORD"
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.ApplicationBase.PermissiveInterlock": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$implements": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.I_Permissive"
+                    ],
+                    "PouType": "FunctionBlock",
+                    "TcImplements": "ApplicationBase.I_Permissive"
+                },
+                "properties": {
+                    "OK": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.PROPERTY-GET-BOOL"
+                    },
+                    "Permissive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..9_OF-BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "PermissiveReason": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..9_OF-STRING-80"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "_OK": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "_OK",
+                    "Permissive",
+                    "PermissiveReason"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ApplicationBase.ST_AxisPTP_HMI": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.ST_HmiFunction"
+                    ],
+                    "TcExtends": "ApplicationBase.ST_HmiFunction"
+                },
+                "properties": {
+                    "ActualAcceleration": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "ActualPosition": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "ActualPositionModulo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "ActualTorque": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 10
+                            }
+                        ]
+                    },
+                    "ActualVelocity": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 11
+                            }
+                        ]
+                    },
+                    "Busy": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "Disable": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 14
+                            }
+                        ]
+                    },
+                    "Enable": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 13
+                            }
+                        ]
+                    },
+                    "Error": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "ErrorId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "HmiEnabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "Home": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 20
+                            }
+                        ]
+                    },
+                    "JogBackwardFast": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 19
+                            }
+                        ]
+                    },
+                    "JogBackwardSlow": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 17
+                            }
+                        ]
+                    },
+                    "JogForwardFast": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 18
+                            }
+                        ]
+                    },
+                    "JogForwardSlow": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 16
+                            }
+                        ]
+                    },
+                    "MoveAbsolute": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 22
+                            }
+                        ]
+                    },
+                    "MoveModulo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 28
+                            }
+                        ]
+                    },
+                    "MoveRelative": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 26
+                            }
+                        ]
+                    },
+                    "MoveVelocity": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 24
+                            }
+                        ]
+                    },
+                    "Name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "Reset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 21
+                            }
+                        ]
+                    },
+                    "Status": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.ST_NcAxisStatus"
+                            },
+                            {
+                                "propertyOrder": 12
+                            }
+                        ]
+                    },
+                    "Stop": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.Button"
+                            },
+                            {
+                                "propertyOrder": 15
+                            }
+                        ]
+                    },
+                    "TargetDistance": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 27
+                            }
+                        ]
+                    },
+                    "TargetPosition": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 23
+                            }
+                        ]
+                    },
+                    "TargetVelocity": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 25
+                            }
+                        ]
+                    },
+                    "Unit": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Name",
+                    "HmiEnabled",
+                    "Unit",
+                    "Busy",
+                    "Error",
+                    "ErrorId",
+                    "ActualAcceleration",
+                    "ActualPosition",
+                    "ActualPositionModulo",
+                    "ActualTorque",
+                    "ActualVelocity",
+                    "Status",
+                    "Enable",
+                    "Disable",
+                    "Stop",
+                    "JogForwardSlow",
+                    "JogBackwardSlow",
+                    "JogForwardFast",
+                    "JogBackwardFast",
+                    "Home",
+                    "Reset",
+                    "MoveAbsolute",
+                    "TargetPosition",
+                    "MoveVelocity",
+                    "TargetVelocity",
+                    "MoveRelative",
+                    "TargetDistance",
+                    "MoveModulo"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.ApplicationBase.ST_HmiFunction": {
                 "additionalProperties": false,
                 "properties": {
@@ -61,6 +561,47 @@
                 ],
                 "type": "object"
             },
+            "ADS-PLC1.ApplicationBase.ST_NcAxisStatus": {
+                "additionalProperties": false,
+                "properties": {
+                    "Coupled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "Disabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "SynchronizedMotion": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Disabled",
+                    "SynchronizedMotion",
+                    "Coupled"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.E_OpMode": {
                 "attributes": {
                     "generate_implicit_init_function": "",
@@ -83,6 +624,67 @@
                     }
                 ],
                 "type": "integer"
+            },
+            "ADS-PLC1.IQueryInterface": {
+                "additionalProperties": false,
+                "attributes": {
+                    "TcPlcInterfaceType": ""
+                },
+                "properties": {
+                    "__GetInterfaceReference": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.METHOD-RETURNING-BOOL-PARAMETERS-nInterfaceId-DINT--pRef-POINTER-TO-POINTER-TO-DWORD"
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.METHOD-RETURNING-BOOL-PARAMETERS-nInterfaceId-DINT--pRef-POINTER-TO-POINTER-TO-DWORD": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "function": true,
+                        "writeValue": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "nInterfaceId": {
+                                    "$ref": "tchmi:general#/definitions/DINT"
+                                },
+                                "pRef": {
+                                    "$ref": "tchmi:general#/definitions/DWORD"
+                                }
+                            },
+                            "required": [
+                                "nInterfaceId",
+                                "pRef"
+                            ],
+                            "type": "object"
+                        }
+                    }
+                ]
+            },
+            "ADS-PLC1.PROPERTY-GET-BOOL": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "function": true
+                    }
+                ]
+            },
+            "ADS-PLC1.PROPERTY-GET-SET-STRING-80": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "function": true,
+                        "writeValue": {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        }
+                    }
+                ]
             },
             "ADS-PLC1.ST_PwmOutput_HMI": {
                 "additionalProperties": false,
@@ -222,7 +824,7 @@
     "DISCOVERY": 1,
     "ENDPOINTS": [
         "http://127.0.0.1:13000",
-        "http://127.0.0.1:3002"
+        "http://127.0.0.1:3004"
     ],
     "ETAGENABLED": true,
     "EXTENSIONS": {
@@ -990,6 +1592,29 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.MAIN.EncoderAxis_HMI.AxisPTP_HMI": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::MAIN::EncoderAxis_HMI::AxisPTP_HMI",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ApplicationBase.ST_AxisPTP_HMI"
+                    },
+                    {
+                        "addSymbol": true,
+                        "propertyOrder": 5,
+                        "userGroups": [
+                            "Admin",
+                            "__SystemAdministrators"
+                        ]
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -4132,6 +4757,7 @@
             "FILES": {},
             "SYMBOLACCESS": 3,
             "SYMBOLS": {
+                "ADS.PLC1.MAIN.EncoderAxis_HMI.AxisPTP_HMI": 3,
                 "ADS.PLC1.MAIN.PwmHmi.PwmOutput_HMI": 3
             }
         },

@@ -1,0 +1,135 @@
+<div id="AxisVelocity_HMI" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-creator-viewport-width="440" data-tchmi-creator-viewport-height="196" data-tchmi-width-mode="Parent" data-tchmi-height-mode="Parent" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "#26292e"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "#34373d"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "leftUnit": "px",
+  "top": 1,
+  "topUnit": "px",
+  "right": 1,
+  "rightUnit": "px",
+  "bottom": 1,
+  "bottomUnit": "px"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 8,
+  "topLeftUnit": "px",
+  "topRight": 8,
+  "topRightUnit": "px",
+  "bottomRight": 8,
+  "bottomRightUnit": "px",
+  "bottomLeft": 8,
+  "bottomLeftUnit": "px"
+}
+</script>
+
+<div id="axv-txt-name" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-top="12" data-tchmi-top-unit="px" data-tchmi-width="250" data-tchmi-width-unit="px" data-tchmi-height="32" data-tchmi-height-unit="px" data-tchmi-text="%pp%data::Name%/pp%" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-text-vertical-alignment="Center">
+</div>
+
+<div id="axv-ms-busy" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiMultiState" data-tchmi-left="276" data-tchmi-left-unit="px" data-tchmi-top="14" data-tchmi-top-unit="px" data-tchmi-width="72" data-tchmi-width-unit="px" data-tchmi-height="28" data-tchmi-height-unit="px" data-tchmi-state="%pp%data::Busy%/pp%" data-tchmi-fallback-text="Busy" data-tchmi-text-font-size="13" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": false,
+    "stateText": "Busy",
+    "stateBackgroundColor": {
+      "color": "#3a3e45"
+    },
+    "stateTextColor": {
+      "color": "#8a9099"
+    }
+  },
+  {
+    "state": true,
+    "stateText": "Busy",
+    "stateBackgroundColor": {
+      "color": "#2e9e44"
+    },
+    "stateTextColor": {
+      "color": "#ffffff"
+    }
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 14,
+  "topLeftUnit": "px",
+  "topRight": 14,
+  "topRightUnit": "px",
+  "bottomRight": 14,
+  "bottomRightUnit": "px",
+  "bottomLeft": 14,
+  "bottomLeftUnit": "px"
+}
+</script>
+</div>
+
+<div id="axv-ms-error" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiMultiState" data-tchmi-left="352" data-tchmi-left-unit="px" data-tchmi-top="14" data-tchmi-top-unit="px" data-tchmi-width="72" data-tchmi-width-unit="px" data-tchmi-height="28" data-tchmi-height-unit="px" data-tchmi-state="%pp%data::Error%/pp%" data-tchmi-fallback-text="Error" data-tchmi-text-font-size="13" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": false,
+    "stateText": "Error",
+    "stateBackgroundColor": {
+      "color": "#3a3e45"
+    },
+    "stateTextColor": {
+      "color": "#8a9099"
+    }
+  },
+  {
+    "state": true,
+    "stateText": "Error",
+    "stateBackgroundColor": {
+      "color": "#d13438"
+    },
+    "stateTextColor": {
+      "color": "#ffffff"
+    }
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 14,
+  "topLeftUnit": "px",
+  "topRight": 14,
+  "topRightUnit": "px",
+  "bottomRight": 14,
+  "bottomRightUnit": "px",
+  "bottomLeft": 14,
+  "bottomLeftUnit": "px"
+}
+</script>
+</div>
+
+<div id="axv-txt-hdr-actual" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="296" data-tchmi-left-unit="px" data-tchmi-top="56" data-tchmi-top-unit="px" data-tchmi-width="128" data-tchmi-width-unit="px" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-text="ACTUAL" data-tchmi-text-font-size="12" data-tchmi-text-font-weight="Bold">
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "#8a9099"
+}
+</script>
+</div>
+
+<div id="axv-txt-velo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-top="80" data-tchmi-top-unit="px" data-tchmi-width="120" data-tchmi-width-unit="px" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-text="Velocity" data-tchmi-text-font-size="16" data-tchmi-text-vertical-alignment="Center">
+</div>
+<div id="axv-out-velo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-left="296" data-tchmi-left-unit="px" data-tchmi-top="80" data-tchmi-top-unit="px" data-tchmi-width="128" data-tchmi-width-unit="px" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-value="%pp%data::ActualVelocity%/pp%" data-tchmi-is-read-only="True" data-tchmi-unit="°/s" data-tchmi-decimal-digits="1" data-tchmi-decimal-precision-mode="Round">
+</div>
+
+<div id="axv-txt-rpm" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-top="132" data-tchmi-top-unit="px" data-tchmi-width="120" data-tchmi-width-unit="px" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-text="Speed" data-tchmi-text-font-size="16" data-tchmi-text-vertical-alignment="Center">
+</div>
+<div id="axv-out-rpm" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-left="296" data-tchmi-left-unit="px" data-tchmi-top="132" data-tchmi-top-unit="px" data-tchmi-width="128" data-tchmi-width-unit="px" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-value="%f%%pp%data::ActualVelocity%/pp% / 6%/f%" data-tchmi-is-read-only="True" data-tchmi-unit="rpm" data-tchmi-decimal-digits="1" data-tchmi-decimal-precision-mode="Round">
+</div>
+</div>

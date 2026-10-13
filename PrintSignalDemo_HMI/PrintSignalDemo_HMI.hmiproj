@@ -12,7 +12,7 @@
     <HmiTitle>PrintSignalDemo_HMI</HmiTitle>
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
-    <HmiCommunicationServerPort>3002</HmiCommunicationServerPort>
+    <HmiCommunicationServerPort>3004</HmiCommunicationServerPort>
     <HmiLogTcHmiServerMessages>false</HmiLogTcHmiServerMessages>
     <HmiLogDesignerModeComMessages>false</HmiLogDesignerModeComMessages>
     <HmiDefaultLanguage>client</HmiDefaultLanguage>
@@ -155,6 +155,13 @@
     <Content Include="UserControls\PwmOutput_HMI.usercontrol.json">
       <SubType>Content</SubType>
       <DependentUpon>UserControls\PwmOutput_HMI.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="UserControls\AxisVelocity_HMI.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControls\AxisVelocity_HMI.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>UserControls\AxisVelocity_HMI.usercontrol</DependentUpon>
     </Content>
     <Content Include="Home.content">
       <SubType>Content</SubType>
