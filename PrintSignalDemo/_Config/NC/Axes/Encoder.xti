@@ -1431,7 +1431,7 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="8192" MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="8192" MaxCount="#x0000ffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 				<TimeComp TimeCompMode="1" EncDelayCycles="1"/>
 			</EncPara>
@@ -1585,33 +1585,33 @@ External Setpoint Generation:
 	</Axis>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 3 (EK1100)^Term 8 (EL5101)">
-				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="ENC Status^Counter value"/>
-				<Link VarA="Enc^Inputs^In^nDataIn2" VarB="ENC Status^Latch value"/>
+			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 2 (EK1100)^Term 8 (EL5101)">
+				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="ENC Status compact^Counter value"/>
+				<Link VarA="Enc^Inputs^In^nDataIn2[0]" VarB="ENC Status compact^Latch value"/>
 				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Counter overflow" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Counter underflow" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Extrapolation stall" Size="1" OffsA="7"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Latch C valid" Size="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Latch extern valid" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Open circuit" Size="1" OffsA="6"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Set counter done" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status^Status^Status of input status" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of extern latch" Size="1" OffsA="4"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input A" Size="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input B" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input C" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Status of input gate" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^TxPDO State" Size="1" OffsA="6"/>
-				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter overflow" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Counter underflow" Size="1" OffsA="3"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Extrapolation stall" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch C valid" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Latch extern valid" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Open circuit" Size="1" OffsA="6"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Set counter done" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status compact^Status^Status of input status" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of extern latch" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input A" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input B" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input C" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Status of input gate" Size="1" OffsA="3"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^Sync error" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^TxPDO State" Size="1" OffsA="6"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="ENC Status compact^Status^TxPDO Toggle" Size="1" OffsA="7"/>
 				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
 				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch C" Size="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control^Control^Set counter" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Outputs^Out^nDataOut1" VarB="ENC Control^Set counter value"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch C" Size="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on negative edge" Size="1" OffsA="3"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Enable latch extern on positive edge" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="ENC Control compact^Control^Set counter" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Outputs^Out^nDataOut1[0]" VarB="ENC Control compact^Set counter value"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

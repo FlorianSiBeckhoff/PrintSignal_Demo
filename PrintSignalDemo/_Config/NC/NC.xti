@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27" ClassName="CNcSafTaskDef" SubType="0">
 	<NC>
-		<SafTask Priority="4" CycleTime="2500" AmsPort="501" Affinity="#x00000008" IoAtBegin="true" SafTaskInfo="256" HighPrioAds="true">
+		<SafTask Priority="4" CycleTime="10000" AmsPort="501" Affinity="#x00000008" IoAtBegin="true" SafTaskInfo="256" HighPrioAds="true">
 			<Name>NC-Task 1 SAF</Name>
 			<Vars VarGrpType="1" InsertType="1">
 				<Name>Inputs</Name>
@@ -17,7 +17,6 @@
 			<Name>NC-Task 1 SVB</Name>
 		</SvbTask>
 		<Axis File="Encoder.xti" Id="1"/>
-		<Axis File="ConfirmationAxis.xti" Id="2"/>
 		<Axis File="PulseTrainAxis.xti" Id="3"/>
 	</NC>
 </TcSmItem>

@@ -982,9 +982,13 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Instance TmcHash="{EFD4541C-2098-F2D9-4F82-D2FA24E69A84}">
+	<Instance TmcHash="{D2737E00-9E25-6181-2504-0668A15D83F9}">
 		<Vars VarGrpType="1">
 			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>MAIN.EncoderAxis_Ref.NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
 			<Var>
 				<Name>GVL_IO.ED2504_PwmWarning</Name>
 				<Comment><![CDATA[ PWM Inputs Device (0x1B00) / PWM Warning]]></Comment>
@@ -995,13 +999,13 @@ External Setpoint Generation:
 				<Comment><![CDATA[ PWM Inputs Device (0x1B00) / PWM Error]]></Comment>
 				<Type>BOOL</Type>
 			</Var>
-			<Var>
-				<Name>MAIN.EncoderAxis_Ref.NcToPlc</Name>
-				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-			</Var>
 		</Vars>
 		<Vars VarGrpType="2" AreaNo="1">
 			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>MAIN.EncoderAxis_Ref.PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
 			<Var>
 				<Name>GVL_IO.ED2504_Ch1_DutyCycle</Name>
 				<Comment><![CDATA[ PWM Outputs (0x1600) / PWM Duty Cycle [%]]]></Comment>
@@ -1021,10 +1025,6 @@ External Setpoint Generation:
 				<Name>GVL_IO.EL2008_DriveEnable</Name>
 				<Comment><![CDATA[ ]]></Comment>
 				<Type>BOOL</Type>
-			</Var>
-			<Var>
-				<Name>MAIN.EncoderAxis_Ref.PlcToNc</Name>
-				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 			</Var>
 		</Vars>
 	</Instance>

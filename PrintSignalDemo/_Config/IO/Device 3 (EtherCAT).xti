@@ -12,7 +12,7 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Box File="Term 6 (EK1818).xti" Id="6">
+		<Box File="Term 3 (EK1818).xti" Id="3">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
 		<EtherCAT PromiscuousModeNoCopy="true" DcSyncMode="2"/>

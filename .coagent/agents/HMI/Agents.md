@@ -37,7 +37,7 @@ An HMI project is built from **server extensions**, also called **domains**. Eac
 
 Not every extension is installed in a given project. The `ADS` extension is part of every new project, but most others are optional and may be added via NuGet. **Use the `ListDomains` symbol to discover which extensions are actually installed** before relying on one — the table below is a reference of known extensions, not a guarantee that each is present.
 
-**Installed in this project:** `ADS`, `TcHmiLua`, `TcHmiMcpServer`, `TcHmiSqliteLogger`, `TcHmiSrv`, `TcHmiUserManagement`. Other extensions in the table below are not installed unless `ListDomains` reports them.
+**Installed in this project:** `ADS`, `TcHmiEcDiagnostics`, `TcHmiLua`, `TcHmiMcpServer`, `TcHmiSqliteLogger`, `TcHmiSrv`, `TcHmiUserManagement`. Other extensions in the table below are not installed unless `ListDomains` reports them.
 
 ### Known Extensions
 

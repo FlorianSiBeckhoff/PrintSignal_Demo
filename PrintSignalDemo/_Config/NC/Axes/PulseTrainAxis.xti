@@ -1424,15 +1424,13 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="3" CreateSymbols="true" AxisType="1">
+	<Axis Id="3" CreateSymbols="true" AxisType="1" AddAxisIoType="105">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara MaxCount="#xffffffff">
-				<Inc RefMode="2"/>
-			</EncPara>
+			<EncPara MaxCount="#xffffffff"/>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1584,6 +1582,19 @@ External Setpoint Generation:
 	<Mappings>
 		<OwnerA>
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 7 (EK1100)^Term 14 (EL2522)">
+				<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
+				<Link VarA="Drive^Inputs^In^nState1" VarB="PTO Status Channel 1^Status^Error" Size="1" OffsA="6"/>
+				<Link VarA="Drive^Inputs^In^nState1" VarB="PTO Status Channel 1^Status^Ramp active" Size="1" OffsA="1"/>
+				<Link VarA="Drive^Inputs^In^nState1" VarB="PTO Status Channel 1^Status^Sel. Ack/End counter" Size="1"/>
+				<Link VarA="Drive^Inputs^In^nState2" VarB="PTO Status Channel 1^Status^Sync error" Size="1" OffsA="5"/>
+				<Link VarA="Drive^Inputs^In^nState2" VarB="PTO Status Channel 1^Status^TxPDO Toggle" Size="1" OffsA="7"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="PTO Control Channel 1^Control^Disable ramp" Size="1" OffsA="1"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="PTO Control Channel 1^Control^Frequency select" Size="1"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="PTO Control Channel 1^Control^Go counter" Size="1" OffsA="2"/>
+				<Link VarA="Drive^Outputs^Out^nDataOut1[0]" VarB="PTO Control Channel 1^Frequency value"/>
+				<Link VarA="Drive^Outputs^Out^nDataOut5" VarB="PTO Target Channel 1^Target counter value"/>
 				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="ENC Status Channel 1^Counter value"/>
 				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="ENC Status Channel 1^Status^Counter overflow" Size="1" OffsA="4"/>
